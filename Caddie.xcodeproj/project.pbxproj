@@ -16,6 +16,7 @@
 		41784FA923676B1C00FB93E9 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41784FA823676B1C00FB93E9 /* PlayerTableViewCell.swift */; };
 		41784FAB23676FA500FB93E9 /* PlayerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41784FAA23676FA500FB93E9 /* PlayerTableViewController.swift */; };
 		41784FAD236770F600FB93E9 /* EditPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41784FAC236770F600FB93E9 /* EditPlayerViewController.swift */; };
+		41C82780236893CA00F242B3 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C8277F236893CA00F242B3 /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		41784FA823676B1C00FB93E9 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		41784FAA23676FA500FB93E9 /* PlayerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewController.swift; sourceTree = "<group>"; };
 		41784FAC236770F600FB93E9 /* EditPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlayerViewController.swift; sourceTree = "<group>"; };
+		41C8277F236893CA00F242B3 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Player.swift; path = ../Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			children = (
 				41784F882367696A00FB93E9 /* AppDelegate.swift */,
 				41784F8A2367696A00FB93E9 /* HomeViewController.swift */,
+				41C8277F236893CA00F242B3 /* Player.swift */,
 				41784FAC236770F600FB93E9 /* EditPlayerViewController.swift */,
 				41784F8C2367696A00FB93E9 /* Main.storyboard */,
 				41784F8F2367696C00FB93E9 /* Assets.xcassets */,
@@ -210,6 +213,7 @@
 				41784F892367696A00FB93E9 /* AppDelegate.swift in Sources */,
 				41784FAD236770F600FB93E9 /* EditPlayerViewController.swift in Sources */,
 				41784FAB23676FA500FB93E9 /* PlayerTableViewController.swift in Sources */,
+				41C82780236893CA00F242B3 /* Player.swift in Sources */,
 				41784FA923676B1C00FB93E9 /* PlayerTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,7 +9,11 @@
 import UIKit
 
 class PlayerTableViewCell: UITableViewCell {
-
+    //MARK: Properties
+    
+    @IBOutlet weak var nameLbl: UILabel!
+    var players = [Player]()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +23,11 @@ class PlayerTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    //MARK: Private Methods
+    
+    private func loadSamplePlayers() {
+        
     }
 
 }
