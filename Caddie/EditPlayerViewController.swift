@@ -9,22 +9,58 @@
 import UIKit
 import os.log
 
-class EditPlayerViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate{
+class EditPlayerViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate{
     
     //MARK: Properties
-    @IBOutlet weak var nameEditText: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var photoImageView: UIImageView!
     
     var player: Player?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameEditText.delegate = self
+        nameTextField.delegate = self
         // Do any additional setup after loading the view.
         // Enable the Save button only if the text field has a valid Meal name.
         updateSaveButtonState()
     }
+    //MARK: Actions
     
+    @IBAction func selectImage(_ sender: UITapGestureRecognizer) {
+        
+        // Hide the keyboard.
+        nameTextField.resignFirstResponder()
+        
+        // UIImagePickerController is a view controller that lets a user pick media from their photo library.
+        let imagePickerController = UIImagePickerController()
+        
+        // Only allow photos to be picked, not taken.
+        imagePickerController.sourceType = .photoLibrary
+        
+        // Make sure ViewController is notified when the user picks an image.
+        imagePickerController.delegate = self
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    //MARK: UIImagePickerControllerDelegate
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        // Dismiss the picker if the user canceled.
+        dismiss(animated: true, completion: nil)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        // The info dictionary may contain multiple representations of the image. You want to use the original.
+        guard let selectedImage = info[.originalImage] as? UIImage else {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+        }
+        
+        // Set photoImageView to display the selected image.
+        photoImageView.image = selectedImage
+        
+        // Dismiss the picker.
+        dismiss(animated: true, completion: nil)
+    }
     //MARK: UITextFieldDelegate
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -59,15 +95,17 @@ class EditPlayerViewController: UIViewController, UITextFieldDelegate, UINavigat
             os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
             return
         }
-        let name = nameEditText.text ?? ""
-        player = Player(name: name)
+        let name = nameTextField.text ?? ""
+        let photo = photoImageView.image
+        
+        player = Player(name: name, photo: photo!)
 
     }
     //MARK: Private Methods
 
     private func updateSaveButtonState() {
         // Disable the Save button if the text field is empty.
-        let text = nameEditText.text ?? ""
+        let text = nameTextField.text ?? ""
         saveButton.isEnabled = !text.isEmpty
     }
 

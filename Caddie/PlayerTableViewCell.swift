@@ -9,9 +9,13 @@
 import UIKit
 
 class PlayerTableViewCell: UITableViewCell {
+    
     //MARK: Properties
     
-    @IBOutlet weak var nameLbl: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var photoImageView: UIImageView!
+    
+    
     var players = [Player]()
     
     override func awakeFromNib() {

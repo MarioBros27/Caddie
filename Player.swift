@@ -11,14 +11,16 @@ import UIKit
 class Player{
     //MARK: Properties
     var name: String?
+    var photo: UIImage?
     
     //MARK: Initialization
-    init?(name: String){
+    init?(name: String, photo: UIImage){
         
         guard !name.isEmpty else {
             return nil
         }
         self.name = name
+        self.photo = photo
         
     }
 }

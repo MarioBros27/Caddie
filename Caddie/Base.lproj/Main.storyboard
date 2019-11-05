@@ -49,7 +49,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9CB-3D-FL5">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="9CB-3D-FL5">
                                             <rect key="frame" x="0.0" y="0.0" width="105" height="90"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -63,7 +63,8 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="nameLbl" destination="y3f-lk-ns8" id="Anm-uY-WOd"/>
+                                    <outlet property="nameLabel" destination="y3f-lk-ns8" id="zpU-8z-V4c"/>
+                                    <outlet property="photoImageView" destination="9CB-3D-FL5" id="svr-M5-waM"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -92,15 +93,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="doJ-q7-C8m">
-                                <rect key="frame" x="85" y="106" width="204" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="doJ-q7-C8m">
+                                <rect key="frame" x="16" y="118" width="204" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2h6-Q8-bHU">
+                                <rect key="frame" x="16" y="89" width="62" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="BYQ-LW-deh">
+                                <rect key="frame" x="16" y="192" width="340" height="340"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="BYQ-LW-deh" secondAttribute="height" multiplier="1:1" id="2Zp-lA-meq"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="d6N-cF-ath" appends="YES" id="m2P-I7-imx"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2h6-Q8-bHU" firstAttribute="leading" secondItem="doJ-q7-C8m" secondAttribute="leading" id="1UW-qm-68h"/>
+                            <constraint firstItem="doJ-q7-C8m" firstAttribute="top" secondItem="2h6-Q8-bHU" secondAttribute="bottom" constant="8" id="IsL-dH-lYv"/>
+                            <constraint firstItem="cce-hi-y6n" firstAttribute="trailing" secondItem="doJ-q7-C8m" secondAttribute="trailing" constant="155" id="PCd-8c-0pk"/>
+                            <constraint firstItem="doJ-q7-C8m" firstAttribute="leading" secondItem="BYQ-LW-deh" secondAttribute="leading" id="SYr-ko-pnU"/>
+                            <constraint firstItem="cce-hi-y6n" firstAttribute="trailing" secondItem="BYQ-LW-deh" secondAttribute="trailing" constant="19" id="rAX-5V-mV8"/>
+                            <constraint firstItem="doJ-q7-C8m" firstAttribute="top" secondItem="2h6-Q8-bHU" secondAttribute="bottom" constant="8" id="uwD-8K-5h4"/>
+                            <constraint firstItem="BYQ-LW-deh" firstAttribute="top" secondItem="doJ-q7-C8m" secondAttribute="bottom" constant="44" id="xaN-cQ-2bh"/>
+                            <constraint firstItem="2h6-Q8-bHU" firstAttribute="leading" secondItem="ZnE-cd-thL" secondAttribute="leadingMargin" id="ynh-I6-hp5"/>
+                            <constraint firstItem="2h6-Q8-bHU" firstAttribute="top" secondItem="cce-hi-y6n" secondAttribute="top" constant="25" id="zk1-yB-fbd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="cce-hi-y6n"/>
                     </view>
                     <navigationItem key="navigationItem" title="Jugador x" id="9aC-Wc-5Ln">
@@ -116,12 +143,18 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="nameEditText" destination="doJ-q7-C8m" id="h4x-6q-pji"/>
+                        <outlet property="nameTextField" destination="doJ-q7-C8m" id="GbL-IR-4um"/>
+                        <outlet property="photoImageView" destination="BYQ-LW-deh" id="gMf-q0-mIV"/>
                         <outlet property="saveButton" destination="sLt-to-ePm" id="Hes-ge-cZC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eij-5g-FU1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="KKS-wg-xKs" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="d6N-cF-ath">
+                    <connections>
+                        <action selector="selectImage:" destination="LcT-BF-mB0" id="EJb-7m-ZpH"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="4124" y="132.68365817091455"/>
         </scene>
@@ -162,4 +195,7 @@
             <point key="canvasLocation" x="3184.8000000000002" y="132.68365817091455"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="defaultPhoto" width="540" height="540"/>
+    </resources>
 </document>

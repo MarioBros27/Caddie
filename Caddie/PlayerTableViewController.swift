@@ -10,14 +10,14 @@ import UIKit
 
 class PlayerTableViewController: UITableViewController {
 
+    //MARK: Properties
+    var players = [Player]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        // Load the sample data.
+        loadSamplePlayers()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -28,72 +28,66 @@ class PlayerTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return players.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        
+        // Table view cells are reused and should be dequeued using a cell identifier.
+        let cellIdentifier = "PlayerTableViewCell"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? PlayerTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of PlayerTableViewCell.")
+        }
+        
 
         // Configure the cell...
+        // Fetches the appropriate meal for the data source layout.
+        let player = players[indexPath.row]
+        
+        cell.nameLabel.text = player.name
+        cell.photoImageView.image = player.photo
 
         return cell
     }
     
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     //MARK: Actions
      @IBAction func unwindToPlayersList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? EditPlayerViewController, let player = sourceViewController.player {
+            
+            // Add a new meal.
+            let newIndexPath = IndexPath(row: players.count, section: 0)
+            
+            players.append(player)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
         
+    }
+    //MARK: Private methods
+    func loadSamplePlayers(){
         
+        let photo1 = UIImage(named: "defaultPhoto")
+        let photo2 = UIImage(named: "defaultPhoto")
+        let photo3 = UIImage(named: "defaultPhoto")
+        
+        guard let player1 = Player(name: "Georgie", photo: photo1!) else {
+            fatalError("Unable to instantiate player1")
+        }
+        
+        guard let player2 = Player(name: "What?", photo: photo2!) else {
+            fatalError("Unable to instantiate player2")
+        }
+        
+        guard let player3 = Player(name: "Dafuq?", photo: photo3!) else {
+            fatalError("Unable to instantiate player3")
+        }
+        
+        players += [player1, player2, player3]
     }
 
 }
