@@ -1,21 +1,16 @@
 //
-//  PlayerCellTableViewCell.swift
+//  CourseTableViewCell.swift
 //  Caddie
 //
-//  Created by Andres on 10/28/19.
+//  Created by Andres on 11/5/19.
 //  Copyright © 2019 Andres. All rights reserved.
 //
 
 import UIKit
 
-class PlayerTableViewCell: UITableViewCell {
-    
-    //MARK: Properties
-    
+class CourseTableViewCell: UITableViewCell {
+
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var photoImageView: UIImageView!
-    
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,6 +22,5 @@ class PlayerTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 
 }
