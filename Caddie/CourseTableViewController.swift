@@ -30,13 +30,17 @@ class CourseTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedCourse = courses[indexPath.row]
-        performSegue(withIdentifier: "teamsKindIdentifier", sender: self)
+        if(playing ?? false){
+            performSegue(withIdentifier: "teamsKindIdentifier", sender: self)
+        }
         
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationTeamsKind = segue.destination as! TeamsKindViewController
+        if(segue.identifier == "teamsKindIdentifier"){
+        let destinationTeamsKind = segue.destination as! TeamsKindTableViewController
         destinationTeamsKind.course = selectedCourse
+        }
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
