@@ -11,10 +11,12 @@ import UIKit
 class CourseTableViewController: UITableViewController {
     //MARK: Properties
     var courses = [Course]()
-    
+    var playing: Bool?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if(playing ?? false){
+            navigationItem.title = "Seleccione equipo"
+        }
         //Load the sample data
         loadSampleCourses()
     }
@@ -87,5 +89,6 @@ class CourseTableViewController: UITableViewController {
         
         courses += [course1, course2, course3]
     }
-
+    
+    
 }
