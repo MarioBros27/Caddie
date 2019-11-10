@@ -12,6 +12,8 @@ class CourseTableViewController: UITableViewController {
     //MARK: Properties
     var courses = [Course]()
     var playing: Bool?
+    var selectedCourse: Course?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if(playing ?? false){
@@ -25,7 +27,17 @@ class CourseTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     // MARK: - Table view data source
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedCourse = courses[indexPath.row]
+        performSegue(withIdentifier: "teamsKindIdentifier", sender: self)
+        
+        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationTeamsKind = segue.destination as! TeamsKindViewController
+        destinationTeamsKind.course = selectedCourse
+    }
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -61,7 +73,8 @@ class CourseTableViewController: UITableViewController {
         }
         
     }
-
+   
+    
     /*
     // MARK: - Navigation
 

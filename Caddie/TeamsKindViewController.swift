@@ -11,9 +11,10 @@ import UIKit
 class TeamsKindViewController: UIViewController {
     var course: Course?
     
+    @IBOutlet weak var label: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        label.text = course?.name 
         // Do any additional setup after loading the view.
     }
     

@@ -20,7 +20,7 @@ class HomeViewController: UIViewController {
     @IBAction func showPlayers(_ sender: Any) {
     }
     
-    @IBAction func showCoursesList(_ sender: Any) {
+    @IBAction func showCoursesList(_ sender: UIButton) {
         playing = false
         performSegue(withIdentifier: "identifier", sender: self)
     }
