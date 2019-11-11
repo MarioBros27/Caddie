@@ -17,10 +17,10 @@ class ConfigureTeamsViewController: UIViewController, UITextFieldDelegate, UIPic
     var teamsSize: Int?
     var teamsNumber: Int?
     var players = [Player]()
+    var tempPlayers = [Player]()
     var teams = [Team]()
     var teamName: String?
-    var currentTeamN: Int?
-    
+    var currentTeamN: Int = 1
     var textFields = [UITextField]()
     
     @IBOutlet weak var teamNameTextField: UITextField!
@@ -42,18 +42,9 @@ class ConfigureTeamsViewController: UIViewController, UITextFieldDelegate, UIPic
         
         teamNameTextField.delegate = self
         
-        currentTeamN = 1
+//        currentTeamN = 1
         
-        if(teamsSize == 2){
-            player3TextField.isHidden = true
-            player4TextField.isHidden = true
-        }
-        if(teamsSize == 3){
-            player4TextField.isHidden = true
-        }
-        
-        //navigationItem.rightBarButtonItem?.title = "Siguiente"
-        
+        hideUnusedTextFields()
         createDummyPlayers()
         createPlayersPicker()
         createToolbar()
@@ -94,6 +85,7 @@ class ConfigureTeamsViewController: UIViewController, UITextFieldDelegate, UIPic
         player2TextField.inputAccessoryView = toolBar
         player3TextField.inputAccessoryView = toolBar
         player4TextField.inputAccessoryView = toolBar
+        
 
     }
     @objc func dismissKeyboard(){
@@ -128,43 +120,78 @@ class ConfigureTeamsViewController: UIViewController, UITextFieldDelegate, UIPic
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
        
         textFields[pickerView.tag].text = players[row].name
+        tempPlayers[pickerView.tag] = players[row]
 
     }
     
     //MARK: Actions
     
     @IBAction func next(_ sender: UIBarButtonItem) {
-        //        **implement functionality to store player in the team and team in teams
-        //        **implement functionality to store player in the team and team in teams
-        //        **implement functionality to store player in the team and team in teams
-        //        **implement functionality to store player in the team and team in teams
-        //        **implement functionality to store player in the team and team in teams
-        //        **implement functionality to store player in the team and team in teams
-        //        **implement functionality to store player in the team and team in teams
-        //        **implement functionality to store player in the team and team in teams
-        //        **implement functionality to store player in the team and team in teams
-        //        **implement functionality to store player in the team and team in teams
         /*
          increment currentTeamN
          if the currentTeamN > teamN -> segue to the next view and send all the data to the view
-         and if it is == change rightbutton to comenzar
+         and if currentTeamN == tesmN -1 rightbutton to comenzar
          if not then delete everything and update title
          */
-        
         teamName = teamNameTextField.text
-    }
-    /*
-    // MARK: - Navigation
+        var actualTeam = [Player]()
+        actualTeam.append(contentsOf: tempPlayers[..<teamsSize!])
+        teams.append(Team(name: teamName ?? "Equipo \(currentTeamN)", size: teamsSize!, players: actualTeam))
+        
+        if (currentTeamN == teamsNumber! - 1){
+            //Change right button
+            navigationItem.rightBarButtonItem?.title = "Comenzar"
+        }
+        if(currentTeamN == teamsNumber!){
+            //Segue
+            performSegue(withIdentifier: "playGameIdentifier", sender: self)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        }else{
+            //Store values, and delete and update title
+            
+            currentTeamN += 1
+            navigationItem.title = "Equipo \(currentTeamN)"
+            resetTextFields()
+        }
+        
     }
-    */
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //Prepare for segue that shows PlayGameTableViewController
+        let destinationPlayGame = segue.destination as! PlayGameTableViewController
+        destinationPlayGame.course = course
+        destinationPlayGame.teamsSize = teamsSize
+        destinationPlayGame.teamsNumber = teamsNumber
+        destinationPlayGame.teams = teams
+        
+    }
+    
+
+
     func createDummyPlayers(){
         for i in 0..<10{
             players.append(Player(name: "Pedro \(i)", photo: UIImage.init(named: "defaultPhoto")!)!)
+        }
+        for i in 0..<teamsSize!{
+            tempPlayers.append(players[i])
+        }
+    }
+    func resetTextFields(){
+        teamNameTextField.text = ""
+        player1TextField.text = ""
+        player2TextField.text = ""
+        player3TextField.text = ""
+        player4TextField.text = ""
+    }
+    func hideUnusedTextFields(){
+        if(teamsSize == 2){
+            player3TextField.isHidden = true
+            player4TextField.isHidden = true
+        }
+        if(teamsSize == 3){
+            player4TextField.isHidden = true
         }
     }
 }
