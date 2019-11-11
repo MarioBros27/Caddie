@@ -14,8 +14,11 @@ class CourseTableViewController: UITableViewController {
     var playing: Bool?
     var selectedCourse: Course?
     
+    @IBOutlet var tableViewConn: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableViewConn.tableFooterView = UIView(frame: CGRect.zero)
+        
         if(playing ?? false){
             navigationItem.title = "Seleccione equipo"
         }

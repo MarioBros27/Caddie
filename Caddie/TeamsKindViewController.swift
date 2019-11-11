@@ -26,6 +26,7 @@ class TeamsKindViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     let combinationTexts = ["2vs2","2vs2vs2","2vs2vs2vs2","3vs3","3vs3vs3","4vs4"]
     
     @IBOutlet weak var label: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         label.text = course?.name 

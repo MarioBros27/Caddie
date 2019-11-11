@@ -24,9 +24,11 @@ class TeamsKindTableViewController: UITableViewController {
     let combinationTexts = ["2vs2","2vs2vs2","2vs2vs2vs2","3vs3","3vs3vs3","4vs4"]
     
     
+    @IBOutlet var tableViewConn: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = course?.name
+        tableViewConn.tableFooterView = UIView(frame: CGRect.zero)
+        //navigationItem.title = course?.name
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -42,7 +44,7 @@ class TeamsKindTableViewController: UITableViewController {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //Prepare for segue that shows configureTeamsTableViewController
-        let destinationConfigureTeams = segue.destination as! ConfigureTeamsTableViewController
+        let destinationConfigureTeams = segue.destination as! ConfigureTeamsViewController
         destinationConfigureTeams.teamsNumber = teamsNumber
         destinationConfigureTeams.teamsSize = teamsSize
         destinationConfigureTeams.course = course

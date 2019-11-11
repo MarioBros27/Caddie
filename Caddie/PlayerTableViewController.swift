@@ -13,9 +13,10 @@ class PlayerTableViewController: UITableViewController {
     //MARK: Properties
     var players = [Player]()
     
+    @IBOutlet var tableViewConn: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableViewConn.tableFooterView = UIView(frame: CGRect.zero)
         // Load the sample data.
         loadSamplePlayers()
     }

@@ -116,6 +116,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableViewConn" destination="f41-1c-B37" id="DIa-bW-A4O"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="drK-db-3Ru" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -334,6 +337,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableViewConn" destination="ZXG-Z7-urI" id="FqG-PR-6bO"/>
                         <segue destination="56i-3a-tY6" kind="show" identifier="teamsKindIdentifier" id="ioP-8J-3f0"/>
                     </connections>
                 </tableViewController>
@@ -377,40 +381,84 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <segue destination="JDn-8X-lYx" kind="show" identifier="configureTeamsIdentifier" id="7QS-2S-bJH"/>
+                        <outlet property="tableViewConn" destination="rbq-rE-YSo" id="NaF-2x-bFl"/>
+                        <segue destination="ekv-Ty-gPH" kind="show" identifier="configureTeamsIdentifier" id="GMK-tx-vYx"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dZo-y7-PLr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="946.37681159420299" y="1784.5982142857142"/>
         </scene>
-        <!--Configure Teams Table View Controller-->
-        <scene sceneID="gAV-9y-jSQ">
+        <!--Equipo 1-->
+        <scene sceneID="AR9-MP-4O1">
             <objects>
-                <tableViewController id="JDn-8X-lYx" customClass="ConfigureTeamsTableViewController" customModule="Caddie" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Kmh-nK-qBH">
+                <viewController title="Equipo 1" id="ekv-Ty-gPH" customClass="ConfigureTeamsViewController" customModule="Caddie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X6L-ph-b7i">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="62" translatesAutoresizingMaskIntoConstraints="NO" id="YxD-SU-VX3">
+                                <rect key="frame" x="14" y="143" width="386" height="398"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre del equipo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6O5-83-RCe">
+                                        <rect key="frame" x="0.0" y="0.0" width="386" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Jugador 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QEj-eK-5DT">
+                                        <rect key="frame" x="0.0" y="92" width="386" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Jugador 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9n6-N7-RCL">
+                                        <rect key="frame" x="0.0" y="184" width="386" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Jugador 3" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lDd-DQ-akq">
+                                        <rect key="frame" x="0.0" y="276" width="386" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Jugador 4" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v81-5X-eIi">
+                                        <rect key="frame" x="0.0" y="368" width="386" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="nfl-0e-E9L">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nfl-0e-E9L" id="oec-iX-Gwp">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="JDn-8X-lYx" id="T0E-5k-J6d"/>
-                            <outlet property="delegate" destination="JDn-8X-lYx" id="txI-jB-TJ1"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gr5-kV-gD2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="YxD-SU-VX3" firstAttribute="leading" secondItem="5iD-n0-F5y" secondAttribute="leading" constant="14" id="F5k-Jn-Pih"/>
+                            <constraint firstItem="5iD-n0-F5y" firstAttribute="trailing" secondItem="YxD-SU-VX3" secondAttribute="trailing" constant="14" id="hCN-3g-VMQ"/>
+                            <constraint firstItem="YxD-SU-VX3" firstAttribute="top" secondItem="5iD-n0-F5y" secondAttribute="top" constant="55" id="mot-kx-tlP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5iD-n0-F5y"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Equipo 1" id="8YF-XX-zzW">
+                        <barButtonItem key="rightBarButtonItem" title="Siguiente" id="in0-DF-4Px">
+                            <connections>
+                                <action selector="next:" destination="ekv-Ty-gPH" id="Lah-3d-GSO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="player1TextField" destination="QEj-eK-5DT" id="E5U-wn-UVL"/>
+                        <outlet property="player2TextField" destination="9n6-N7-RCL" id="KX8-6G-3U8"/>
+                        <outlet property="player3TextField" destination="lDd-DQ-akq" id="6Uu-Fc-nSm"/>
+                        <outlet property="player4TextField" destination="v81-5X-eIi" id="TSe-28-TH1"/>
+                        <outlet property="teamNameTextField" destination="6O5-83-RCe" id="Uau-yR-KXY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c17-E7-UWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2048" y="1857"/>
+            <point key="canvasLocation" x="2737.68115942029" y="1837.5"/>
         </scene>
         <!--Jugador x-->
         <scene sceneID="GgB-tE-8A3">
