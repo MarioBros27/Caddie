@@ -12,6 +12,7 @@ class Course{
     //MARK: Properties
     var name: String?
     var holes = [Int]()
+//    var parCampo = Int
     
     //MARK: Initialization
     init?(name: String, holes: [Int]){
