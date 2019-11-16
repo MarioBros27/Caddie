@@ -28,6 +28,40 @@ class PlayGameTableViewCell: UITableViewCell {
         // Initialization code
     }
 
+    @IBAction func stepperValueChanged(_ sender: UIStepper) {
+        hitsLabel.text = Int(sender.value).description
+    }
+    
+    
+    @IBAction func chipInSelectionChanged(_ sender: UIButton) {
+        switchCheckBox(button: sender)
+    }
+    
+    
+    @IBAction func sandyParSelectionChanged(_ sender: UIButton) {
+        switchCheckBox(button: sender)
+    }
+    
+    @IBAction func hoyEs1SelectionChanged(_ sender: UIButton) {
+        switchCheckBox(button: sender)
+    }
+    
+    @IBAction func hoyEs2SelectionChanged(_ sender: UIButton) {
+        switchCheckBox(button: sender)
+        
+    }
+    @IBAction func hoyEs3SelectionChanged(_ sender: UIButton) {
+        switchCheckBox(button: sender)
+    }
+    func switchCheckBox(button: UIButton){
+        if(button.isSelected){
+            //Uncheck button
+            button.isSelected = false
+        }else{
+            button.isSelected = true
+        }
+        
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

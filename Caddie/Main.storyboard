@@ -515,7 +515,11 @@
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMK-yF-dQ8">
                                             <rect key="frame" x="82" y="113" width="32" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Button" image="unchekedPhoto"/>
+                                            <state key="normal" image="unchekedPhoto"/>
+                                            <state key="selected" backgroundImage="checkedPhoto"/>
+                                            <connections>
+                                                <action selector="chipInSelectionChanged:" destination="CXh-2u-Ebf" eventType="touchUpInside" id="jdL-c4-D1b"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sandy par" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeq-ex-ofd">
                                             <rect key="frame" x="134" y="123" width="78" height="21"/>
@@ -527,7 +531,11 @@
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ffd-gL-B3M">
                                             <rect key="frame" x="229" y="113" width="32" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Button" image="unchekedPhoto"/>
+                                            <state key="normal" image="unchekedPhoto"/>
+                                            <state key="selected" image="checkedPhoto"/>
+                                            <connections>
+                                                <action selector="sandyParSelectionChanged:" destination="CXh-2u-Ebf" eventType="touchUpInside" id="zb4-VY-MLp"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hoy es 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqk-Cy-dYK">
                                             <rect key="frame" x="20" y="167" width="80" height="21"/>
@@ -539,7 +547,11 @@
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcV-lQ-JXM">
                                             <rect key="frame" x="108" y="157" width="32" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Button" image="unchekedPhoto"/>
+                                            <state key="normal" image="unchekedPhoto"/>
+                                            <state key="selected" image="checkedPhoto"/>
+                                            <connections>
+                                                <action selector="hoyEs2SelectionChanged:" destination="CXh-2u-Ebf" eventType="touchUpInside" id="0t1-Bb-zsW"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hoy es 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohz-CC-zbC">
                                             <rect key="frame" x="180" y="167" width="68" height="21"/>
@@ -551,7 +563,11 @@
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7Q-5c-f43">
                                             <rect key="frame" x="265" y="157" width="32" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Button" image="unchekedPhoto"/>
+                                            <state key="normal" image="unchekedPhoto"/>
+                                            <state key="selected" image="checkedPhoto"/>
+                                            <connections>
+                                                <action selector="hoyEs3SelectionChanged:" destination="CXh-2u-Ebf" eventType="touchUpInside" id="Rgr-ui-Egv"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hoy es 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jN7-vh-wrj">
                                             <rect key="frame" x="286" y="123" width="67" height="21"/>
@@ -563,11 +579,18 @@
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FqC-lC-FE4">
                                             <rect key="frame" x="362" y="113" width="32" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Button" image="unchekedPhoto"/>
+                                            <state key="normal" image="unchekedPhoto"/>
+                                            <state key="selected" image="checkedPhoto"/>
+                                            <connections>
+                                                <action selector="hoyEs1SelectionChanged:" destination="CXh-2u-Ebf" eventType="touchUpInside" id="t3i-lH-dH9"/>
+                                            </connections>
                                         </button>
                                         <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="xmK-Ts-zex">
                                             <rect key="frame" x="300" y="71" width="94" height="29"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <action selector="stepperValueChanged:" destination="CXh-2u-Ebf" eventType="valueChanged" id="cqS-w5-30C"/>
+                                            </connections>
                                         </stepper>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -590,7 +613,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="4" id="Jmg-hS-rmZ">
                         <barButtonItem key="leftBarButtonItem" title="Cerrar" id="INt-lK-lZc"/>
-                        <barButtonItem key="rightBarButtonItem" title="Siguiente" id="V6J-Hz-ULW"/>
+                        <barButtonItem key="rightBarButtonItem" title="Siguiente" id="V6J-Hz-ULW">
+                            <connections>
+                                <action selector="nextButtonPressed:" destination="fkR-ji-C0P" id="Dpe-sc-YgU"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mainTableView" destination="Uqm-zA-NsR" id="bOC-nf-4sz"/>
@@ -747,6 +774,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="checkedPhoto" width="64" height="64"/>
         <image name="defaultPhoto" width="540" height="540"/>
         <image name="unchekedPhoto" width="64" height="64"/>
     </resources>
