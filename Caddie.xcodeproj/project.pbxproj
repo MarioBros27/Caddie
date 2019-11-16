@@ -159,11 +159,11 @@
 		41784F872367696A00FB93E9 /* Caddie */ = {
 			isa = PBXGroup;
 			children = (
-				4117556E237F8A8E001848CB /* Main.storyboard */,
 				413C9A82237F2C0500340C7F /* ViewControllers */,
 				413C9A81237F2BE200340C7F /* Views */,
 				413C9A80237F2BAB00340C7F /* VOs */,
 				41784F882367696A00FB93E9 /* AppDelegate.swift */,
+				4117556E237F8A8E001848CB /* Main.storyboard */,
 				41784F8F2367696C00FB93E9 /* Assets.xcassets */,
 				41784F912367696C00FB93E9 /* LaunchScreen.storyboard */,
 				41784F942367696C00FB93E9 /* Info.plist */,

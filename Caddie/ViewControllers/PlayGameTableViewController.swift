@@ -14,7 +14,11 @@ class PlayGameTableViewController: UITableViewController {
     var teamsNumber: Int?
     var teams = [Team]()
 
+    @IBOutlet var mainTableView: UITableView!
+    
     override func viewDidLoad() {
+//        mainTableView.tableFooterView = UIView(frame: CGRect.zero)
+
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
@@ -47,11 +51,31 @@ class PlayGameTableViewController: UITableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+//        return teamsNumber ?? 5
+        return 4
     }
     
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return teams[section].name
+        return "test"
+    }
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let myLabel = UILabel()
+        myLabel.frame = CGRect(x: 20, y: 14, width: 320, height: 20)
+        myLabel.font = UIFont.boldSystemFont(ofSize: 24)
+        myLabel.text = "Test 2"
+        
+        let headerView = UIView()
+        headerView.addSubview(myLabel)
+        
+        return headerView
+    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+//        return teamsSize ?? 5
         return 2
     }
     
@@ -64,12 +88,12 @@ class PlayGameTableViewController: UITableViewController {
         
         // Configure the cell...
 //        let tempTeamSize = 3
-        if(teamsSize == 2){
-            tableView.rowHeight = 430
-        }
-        if(teamsSize == 3){
-            tableView.rowHeight = 630
-        }
+//        if(teamsSize == 2){
+//            tableView.rowHeight = 430
+//        }
+//        if(teamsSize == 3){
+//            tableView.rowHeight = 630
+//        }
         cell.selectionStyle = .none
         
         

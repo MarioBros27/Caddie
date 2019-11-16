@@ -41,6 +41,7 @@ class TeamsKindTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         assignValues (combValue: TeamsKindTableViewController.Combinations(rawValue: combinationTexts[indexPath.row])!)
          performSegue(withIdentifier: "configureTeamsIdentifier", sender: self)
+        
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //Prepare for segue that shows configureTeamsTableViewController
