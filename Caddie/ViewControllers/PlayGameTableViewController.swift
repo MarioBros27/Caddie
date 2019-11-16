@@ -22,35 +22,60 @@ class PlayGameTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        print("Course: "+(course?.name)!)
-        print("team size: \(teamsSize!) and teams number: \(teamsNumber!)")
-        for team in teams{
-            print("team: \(team.name) and count of players :\(team.players.count)")
-        }
+//        print("Course: "+(course?.name)!)
+//        print("team size: \(teamsSize!) and teams number: \(teamsNumber!)")
+//        for team in teams{
+//            print("team: \(team.name) and count of players :\(team.players.count)")
+//        }
     }
 
     // MARK: - Table view data source
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        assignValues (combValue: TeamsKindTableViewController.Combinations(rawValue: combinationTexts[indexPath.row])!)
+//        performSegue(withIdentifier: "configureTeamsIdentifier", sender: self)
+//    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        //Prepare for segue that shows configureTeamsTableViewController
+//        let destinationConfigureTeams = segue.destination as! ConfigureTeamsViewController
+//        destinationConfigureTeams.teamsNumber = teamsNumber
+//        destinationConfigureTeams.teamsSize = teamsSize
+//        destinationConfigureTeams.course = course
+//        destinationConfigureTeams.currentTeamN = 1
+        
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 2
     }
-
-    /*
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        let cellIdentifier = "PlayGameTableViewCell"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? PlayGameTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of CourseTableViewCell.")
+        }
+        
         // Configure the cell...
-
+//        let tempTeamSize = 3
+        if(teamsSize == 2){
+            tableView.rowHeight = 430
+        }
+        if(teamsSize == 3){
+            tableView.rowHeight = 630
+        }
+        cell.selectionStyle = .none
+        
+        
         return cell
     }
-    */
-
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
