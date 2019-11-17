@@ -13,8 +13,8 @@
 		413C9A92237F315800340C7F /* NewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413C9A91237F315800340C7F /* NewTests.swift */; };
 		413C9A94237F725E00340C7F /* PlayGameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413C9A93237F725E00340C7F /* PlayGameTableViewCell.swift */; };
 		417466C72379CBBE00C6B282 /* PlayGameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417466C62379CBBE00C6B282 /* PlayGameTableViewController.swift */; };
-		4175F76A2381B206000BB8EC /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4175F7682381B206000BB8EC /* Model.xcdatamodeld */; };
-		4175F76D2381C38A000BB8EC /* PlayerDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4175F76C2381C38A000BB8EC /* PlayerDataController.swift */; };
+		4175F76A2381B206000BB8EC /* Caddie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4175F7682381B206000BB8EC /* Caddie.xcdatamodeld */; };
+		4175F76D2381C38A000BB8EC /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4175F76C2381C38A000BB8EC /* DataController.swift */; };
 		41784F892367696A00FB93E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41784F882367696A00FB93E9 /* AppDelegate.swift */; };
 		41784F8B2367696A00FB93E9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41784F8A2367696A00FB93E9 /* HomeViewController.swift */; };
 		41784F902367696C00FB93E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41784F8F2367696C00FB93E9 /* Assets.xcassets */; };
@@ -53,7 +53,7 @@
 		413C9A93237F725E00340C7F /* PlayGameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGameTableViewCell.swift; sourceTree = "<group>"; };
 		417466C62379CBBE00C6B282 /* PlayGameTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGameTableViewController.swift; sourceTree = "<group>"; };
 		4175F7692381B206000BB8EC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		4175F76C2381C38A000BB8EC /* PlayerDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDataController.swift; sourceTree = "<group>"; };
+		4175F76C2381C38A000BB8EC /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		41784F852367696A00FB93E9 /* Caddie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caddie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41784F882367696A00FB93E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41784F8A2367696A00FB93E9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -144,7 +144,7 @@
 		4175F76B2381C369000BB8EC /* DataControllers */ = {
 			isa = PBXGroup;
 			children = (
-				4175F76C2381C38A000BB8EC /* PlayerDataController.swift */,
+				4175F76C2381C38A000BB8EC /* DataController.swift */,
 			);
 			path = DataControllers;
 			sourceTree = "<group>";
@@ -171,7 +171,7 @@
 		41784F872367696A00FB93E9 /* Caddie */ = {
 			isa = PBXGroup;
 			children = (
-				4175F7682381B206000BB8EC /* Model.xcdatamodeld */,
+				4175F7682381B206000BB8EC /* Caddie.xcdatamodeld */,
 				4175F76B2381C369000BB8EC /* DataControllers */,
 				413C9A82237F2C0500340C7F /* ViewControllers */,
 				413C9A81237F2BE200340C7F /* Views */,
@@ -309,7 +309,7 @@
 				413C9A94237F725E00340C7F /* PlayGameTableViewCell.swift in Sources */,
 				41986BE72378935C00D0A85E /* ConfigureTeamsViewController.swift in Sources */,
 				41986BEF2378E73300D0A85E /* Team.swift in Sources */,
-				4175F76A2381B206000BB8EC /* Model.xcdatamodeld in Sources */,
+				4175F76A2381B206000BB8EC /* Caddie.xcdatamodeld in Sources */,
 				413C9A7F237F236500340C7F /* Player.swift in Sources */,
 				41784F892367696A00FB93E9 /* AppDelegate.swift in Sources */,
 				41986BED2378C5BE00D0A85E /* TeamsKindTableViewCell.swift in Sources */,
@@ -321,7 +321,7 @@
 				41986BE9237893E300D0A85E /* TeamsKindViewController.swift in Sources */,
 				41FA558B2371F81E0015B527 /* CourseTableViewCell.swift in Sources */,
 				41FA555D2371D73F0015B527 /* EditCourseViewController.swift in Sources */,
-				4175F76D2381C38A000BB8EC /* PlayerDataController.swift in Sources */,
+				4175F76D2381C38A000BB8EC /* DataController.swift in Sources */,
 				41784FA923676B1C00FB93E9 /* PlayerTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -573,13 +573,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		4175F7682381B206000BB8EC /* Model.xcdatamodeld */ = {
+		4175F7682381B206000BB8EC /* Caddie.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				4175F7692381B206000BB8EC /* Model.xcdatamodel */,
 			);
 			currentVersion = 4175F7692381B206000BB8EC /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
+			path = Caddie.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
