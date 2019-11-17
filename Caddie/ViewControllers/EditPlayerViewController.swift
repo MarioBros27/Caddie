@@ -17,6 +17,7 @@ class EditPlayerViewController: UIViewController, UITextFieldDelegate, UINavigat
     @IBOutlet weak var photoImageView: UIImageView!
     
     var player: Player?
+    var newId: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,10 +97,10 @@ class EditPlayerViewController: UIViewController, UITextFieldDelegate, UINavigat
             return
         }
         let name = nameTextField.text ?? ""
-        let photo = photoImageView.image
         
-        player = Player(name: name, photo: photo!)
-
+        player = Player(nombre: name, id: newId!, albatros: 0, birdies: 0, chipIns: 0, eagles: 0, handycap: 0, hoyEs: 0, sandyPars: 0)
+        let playerDAO = PlayerDAO()
+        playerDAO.addPlayer(nombre: name, id: newId!)
     }
     //MARK: Private Methods
 

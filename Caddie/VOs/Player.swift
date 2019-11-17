@@ -10,17 +10,31 @@ import UIKit
 
 class Player{
     //MARK: Properties
-    var name: String?
+    var nombre: String?
     var photo: UIImage?
     
+    var id: Int
+    var albatros: Int
+    var birdies: Int
+    var chipIns: Int
+    var eagles: Int
+    var handycap: Int
+    var hoyEs: Int
+    var sandyPars: Int
+    
+    
     //MARK: Initialization
-    init?(name: String, photo: UIImage){
+    init(nombre: String,id: Int, albatros: Int, birdies: Int, chipIns: Int, eagles: Int, handycap: Int, hoyEs: Int, sandyPars: Int ){
         
-        guard !name.isEmpty else {
-            return nil
-        }
-        self.name = name
-        self.photo = photo
+        self.nombre = nombre
+        self.id = id
+        self.albatros = albatros
+        self.birdies = birdies
+        self.chipIns = chipIns
+        self.eagles = eagles
+        self.handycap = handycap
+        self.hoyEs = hoyEs
+        self.sandyPars = sandyPars
         
     }
 }

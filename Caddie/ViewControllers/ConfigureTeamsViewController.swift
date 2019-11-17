@@ -45,7 +45,7 @@ class ConfigureTeamsViewController: UIViewController, UITextFieldDelegate, UIPic
 //        currentTeamN = 1
         
         hideUnusedTextFields()
-        createDummyPlayers()
+//        createDummyPlayers()
         createPlayersPicker()
         createToolbar()
     }
@@ -114,12 +114,12 @@ class ConfigureTeamsViewController: UIViewController, UITextFieldDelegate, UIPic
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return players[row].name
+        return players[row].nombre
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
        
-        textFields[pickerView.tag].text = players[row].name
+        textFields[pickerView.tag].text = players[row].nombre
         tempPlayers[pickerView.tag] = players[row]
 
     }
@@ -170,14 +170,14 @@ class ConfigureTeamsViewController: UIViewController, UITextFieldDelegate, UIPic
     
 
 
-    func createDummyPlayers(){
-        for i in 0..<10{
-            players.append(Player(name: "Pedro \(i)", photo: UIImage.init(named: "defaultPhoto")!)!)
-        }
-        for i in 0..<teamsSize!{
-            tempPlayers.append(players[i])
-        }
-    }
+//    func createDummyPlayers(){
+//        for i in 0..<10{
+//            players.append(Player(name: "Pedro \(i)", photo: UIImage.init(named: "defaultPhoto")!)!)
+//        }
+//        for i in 0..<teamsSize!{
+//            tempPlayers.append(players[i])
+//        }
+//    }
     func resetTextFields(){
         teamNameTextField.text = ""
         player1TextField.text = ""

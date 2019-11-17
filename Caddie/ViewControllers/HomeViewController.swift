@@ -34,6 +34,9 @@ class HomeViewController: UIViewController {
             let destinationView = segue.destination as! CourseTableViewController
             destinationView.playing = playing
             
+        }else{
+            //Show players
+            
         }
     }
 }

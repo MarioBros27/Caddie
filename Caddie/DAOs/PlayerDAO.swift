@@ -12,14 +12,26 @@ import CoreData
 
 class PlayerDAO{
     
-    func addPlayer(){
+    func addPlayer(nombre: String, id: Int){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{return}
         let managedContext = appDelegate.persistentContainer.viewContext
         let playerEntity = NSEntityDescription.entity(forEntityName: "Player", in: managedContext)
         
         let player = NSManagedObject(entity: playerEntity!, insertInto: managedContext)
-        player.setValue("Juan", forKey: "nombre")
-        player.setValue(1, forKey: "birdies")
+        player.setValue(nombre, forKey: "nombre")
+        player.setValue(id, forKey: "id")
+
+        player.setValue(0, forKey: "birdies")
+        player.setValue(0, forKey: "albatros")
+        player.setValue(0, forKey: "chipIns")
+        player.setValue(0, forKey: "eagles")
+
+        player.setValue(0, forKey: "handycap")
+
+        player.setValue(0, forKey: "hoyEs")
+
+        player.setValue(0, forKey: "sandyPars")
+
         
         //Save the player into the database
         do{
@@ -53,10 +65,30 @@ class PlayerDAO{
         
         
     }
+
     
-    func getPlayers(){
-        //returns a list of players
+    func getAllPlayers() -> [Player]{
+        var players = [Player]()
+        //Returns a player
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
+        //Configuration of the fetch request
         
+        fetchRequest.sortDescriptors = [NSSortDescriptor.init(key: "id", ascending: true)]
+        
+        do{
+            let result = try managedContext.fetch(fetchRequest)
+            for data in result as! [NSManagedObject]{
+                if(result.count>1){
+                let player = Player(nombre: data.value(forKey: "nombre") as! String, id: data.value(forKey: "id") as! Int, albatros: data.value(forKey: "albatros") as! Int, birdies: data.value(forKey: "birdies") as! Int, chipIns: data.value(forKey: "chipIns") as! Int, eagles: data.value(forKey: "eagles") as! Int, handycap: data.value(forKey: "handycap") as! Int, hoyEs: data.value(forKey: "hoyEs") as! Int, sandyPars: data.value(forKey: "sandyPars") as! Int)
+                players.append(player)
+                }
+            }
+        }catch{
+            print("Failed get Player request")
+        }
+        return players
         
         
     }
