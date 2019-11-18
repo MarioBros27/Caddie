@@ -13,6 +13,7 @@ class PlayGameTableViewController: UITableViewController {
     var teamsSize: Int?
     var teamsNumber: Int?
     var teams = [Team]()
+    var currentHole = 1
 
     @IBOutlet var mainTableView: UITableView!
     
@@ -20,7 +21,6 @@ class PlayGameTableViewController: UITableViewController {
 //        mainTableView.tableFooterView = UIView(frame: CGRect.zero)
 
         super.viewDidLoad()
-
 //        print("Course: "+(course?.name)!)
 //        print("team size: \(teamsSize!) and teams number: \(teamsNumber!)")
 //        for team in teams{
@@ -77,6 +77,13 @@ class PlayGameTableViewController: UITableViewController {
     //MARK: Actions
     @IBAction func nextButtonPressed(_ sender: UIBarButtonItem) {
         tryingTOgetData()
+        
+        //Calcular puntajes con scoringCalculator
+        //Agregar puntajes obtenidos por el scoringCalculator al game para poder ver live score
+        //if currentHole == 18 change next to finish
+        //Mostrar live score con nuevos puntajes
+        currentHole = currentHole + 1
+    
     }
     
     //MARK: BusinessFunctions

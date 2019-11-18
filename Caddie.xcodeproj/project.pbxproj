@@ -17,6 +17,11 @@
 		41446A932382FE5C001E0DFB /* PlayerPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41446A912382FE5C001E0DFB /* PlayerPlaying.swift */; };
 		41446A952382FE80001E0DFB /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41446A942382FE80001E0DFB /* Game.swift */; };
 		41446A962382FE80001E0DFB /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41446A942382FE80001E0DFB /* Game.swift */; };
+		41446A992383062F001E0DFB /* ScoringCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41446A982383062F001E0DFB /* ScoringCalculator.swift */; };
+		41446A9A2383062F001E0DFB /* ScoringCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41446A982383062F001E0DFB /* ScoringCalculator.swift */; };
+		41446A9C23830BBD001E0DFB /* ScoringCalculatorUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41446A9B23830BBD001E0DFB /* ScoringCalculatorUnitTests.swift */; };
+		41446A9E23831C42001E0DFB /* TeamPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41446A9D23831C42001E0DFB /* TeamPlaying.swift */; };
+		41446A9F23831C42001E0DFB /* TeamPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41446A9D23831C42001E0DFB /* TeamPlaying.swift */; };
 		417466C72379CBBE00C6B282 /* PlayGameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417466C62379CBBE00C6B282 /* PlayGameTableViewController.swift */; };
 		4175F76A2381B206000BB8EC /* Caddie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4175F7682381B206000BB8EC /* Caddie.xcdatamodeld */; };
 		4175F76D2381C38A000BB8EC /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4175F76C2381C38A000BB8EC /* DataController.swift */; };
@@ -59,6 +64,9 @@
 		41446A8F2382FA91001E0DFB /* PlayerStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatisticsViewController.swift; sourceTree = "<group>"; };
 		41446A912382FE5C001E0DFB /* PlayerPlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPlaying.swift; sourceTree = "<group>"; };
 		41446A942382FE80001E0DFB /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		41446A982383062F001E0DFB /* ScoringCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoringCalculator.swift; sourceTree = "<group>"; };
+		41446A9B23830BBD001E0DFB /* ScoringCalculatorUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoringCalculatorUnitTests.swift; sourceTree = "<group>"; };
+		41446A9D23831C42001E0DFB /* TeamPlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamPlaying.swift; sourceTree = "<group>"; };
 		417466C62379CBBE00C6B282 /* PlayGameTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGameTableViewController.swift; sourceTree = "<group>"; };
 		4175F7692381B206000BB8EC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		4175F76C2381C38A000BB8EC /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
@@ -110,6 +118,7 @@
 				413C9A7E237F236500340C7F /* Player.swift */,
 				41446A912382FE5C001E0DFB /* PlayerPlaying.swift */,
 				41446A942382FE80001E0DFB /* Game.swift */,
+				41446A9D23831C42001E0DFB /* TeamPlaying.swift */,
 			);
 			path = VOs;
 			sourceTree = "<group>";
@@ -147,8 +156,19 @@
 				413C9A89237F2F5D00340C7F /* CaddieUnitTests.swift */,
 				413C9A8B237F2F5D00340C7F /* Info.plist */,
 				413C9A91237F315800340C7F /* NewTests.swift */,
+				41446A9B23830BBD001E0DFB /* ScoringCalculatorUnitTests.swift */,
 			);
 			path = CaddieUnitTests;
+			sourceTree = "<group>";
+		};
+		41446A9723830604001E0DFB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4175F7A12381D4D4000BB8EC /* DAOs */,
+				413C9A80237F2BAB00340C7F /* VOs */,
+				41446A982383062F001E0DFB /* ScoringCalculator.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		4175F76B2381C369000BB8EC /* DataControllers */ = {
@@ -189,12 +209,11 @@
 		41784F872367696A00FB93E9 /* Caddie */ = {
 			isa = PBXGroup;
 			children = (
+				41446A9723830604001E0DFB /* Model */,
 				4175F7682381B206000BB8EC /* Caddie.xcdatamodeld */,
 				4175F76B2381C369000BB8EC /* DataControllers */,
 				413C9A82237F2C0500340C7F /* ViewControllers */,
 				413C9A81237F2BE200340C7F /* Views */,
-				4175F7A12381D4D4000BB8EC /* DAOs */,
-				413C9A80237F2BAB00340C7F /* VOs */,
 				41784F882367696A00FB93E9 /* AppDelegate.swift */,
 				4117556E237F8A8E001848CB /* Main.storyboard */,
 				41784F8F2367696C00FB93E9 /* Assets.xcassets */,
@@ -314,10 +333,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41446A9F23831C42001E0DFB /* TeamPlaying.swift in Sources */,
+				41446A9C23830BBD001E0DFB /* ScoringCalculatorUnitTests.swift in Sources */,
 				41446A932382FE5C001E0DFB /* PlayerPlaying.swift in Sources */,
 				413C9A92237F315800340C7F /* NewTests.swift in Sources */,
 				413C9A8A237F2F5D00340C7F /* CaddieUnitTests.swift in Sources */,
 				41446A962382FE80001E0DFB /* Game.swift in Sources */,
+				41446A9A2383062F001E0DFB /* ScoringCalculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +356,7 @@
 				413C9A7F237F236500340C7F /* Player.swift in Sources */,
 				41784F892367696A00FB93E9 /* AppDelegate.swift in Sources */,
 				41986BED2378C5BE00D0A85E /* TeamsKindTableViewCell.swift in Sources */,
+				41446A992383062F001E0DFB /* ScoringCalculator.swift in Sources */,
 				41FA558D2371F8560015B527 /* Course.swift in Sources */,
 				41FA55892371F8050015B527 /* CourseTableViewController.swift in Sources */,
 				4175F7A32381D4FA000BB8EC /* PlayerDAO.swift in Sources */,
@@ -347,6 +370,7 @@
 				41446A922382FE5C001E0DFB /* PlayerPlaying.swift in Sources */,
 				4175F76D2381C38A000BB8EC /* DataController.swift in Sources */,
 				41784FA923676B1C00FB93E9 /* PlayerTableViewCell.swift in Sources */,
+				41446A9E23831C42001E0DFB /* TeamPlaying.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
