@@ -20,7 +20,7 @@ class CourseTableViewController: UITableViewController {
         tableViewConn.tableFooterView = UIView(frame: CGRect.zero)
         
         if(playing ?? false){
-            navigationItem.title = "Seleccione equipo"
+            navigationItem.title = "Seleccione campo"
         }
         //Load the sample data
         loadSampleCourses()

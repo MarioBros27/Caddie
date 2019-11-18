@@ -81,20 +81,35 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="9CB-3D-FL5">
-                                            <rect key="frame" x="0.0" y="0.0" width="105" height="90"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="golferPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="9CB-3D-FL5">
+                                            <rect key="frame" x="20" y="9" width="70" height="70"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3f-lk-ns8">
-                                            <rect key="frame" x="113" y="11" width="246" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Handycap:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Av5-wi-M2M">
+                                            <rect key="frame" x="98" y="58" width="90" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNT-yd-Krp">
+                                            <rect key="frame" x="196" y="58" width="90" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Labelg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3f-lk-ns8">
+                                            <rect key="frame" x="98" y="11" width="246" height="39"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="handyCapLabel" destination="LNT-yd-Krp" id="5pk-Jx-DKc"/>
                                     <outlet property="nameLabel" destination="y3f-lk-ns8" id="zpU-8z-V4c"/>
                                     <outlet property="photoImageView" destination="9CB-3D-FL5" id="svr-M5-waM"/>
                                 </connections>
@@ -115,11 +130,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableViewConn" destination="f41-1c-B37" id="DIa-bW-A4O"/>
+                        <segue destination="ORw-xU-FQv" kind="show" identifier="playerStatisticsIdentifier" id="ch4-P6-R39"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="drK-db-3Ru" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1835" y="133"/>
+            <point key="canvasLocation" x="1834.7826086956522" y="132.58928571428572"/>
         </scene>
         <!--Campo-->
         <scene sceneID="QTB-2e-Wya">
@@ -252,7 +268,7 @@
         <scene sceneID="piP-1V-2mI">
             <objects>
                 <tableViewController id="K28-85-mDy" customClass="CourseTableViewController" customModule="Caddie" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZXG-Z7-urI">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZXG-Z7-urI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -264,10 +280,14 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTG-sg-llx">
-                                            <rect key="frame" x="31" y="11" width="160" height="21"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="coursePhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Yyk-bX-i5a">
+                                            <rect key="frame" x="20" y="9" width="70" height="70"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTG-sg-llx">
+                                            <rect key="frame" x="98" y="26" width="296" height="36"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -298,7 +318,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fXw-73-vsU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="980" y="1098.8005997001501"/>
+            <point key="canvasLocation" x="979.71014492753636" y="1098.2142857142856"/>
         </scene>
         <!--Equipos-->
         <scene sceneID="eFm-P5-7bV">
@@ -772,6 +792,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="wfT-kf-5Lb"/>
                     </view>
+                    <connections>
+                        <outlet property="albatrosLabel" destination="geV-8N-VBp" id="I3c-A4-H5M"/>
+                        <outlet property="birdiesLabel" destination="BGH-YJ-hgA" id="U3t-mA-8jt"/>
+                        <outlet property="chipInsLabel" destination="sjB-yJ-29v" id="H8o-YK-9lL"/>
+                        <outlet property="eaglesLabel" destination="agk-2o-3dH" id="MEM-Ry-mCX"/>
+                        <outlet property="handyCapLabel" destination="rc0-vN-dx2" id="81w-vz-7iK"/>
+                        <outlet property="hoyEsLabel" destination="TcB-3J-bAG" id="NcF-Bf-G8F"/>
+                        <outlet property="nameLabel" destination="d58-bn-0ji" id="RDm-yX-UaE"/>
+                        <outlet property="sandyParsLabel" destination="E3x-h4-Htf" id="pbO-9b-pe6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IOh-hj-SVo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -852,7 +882,9 @@
     </scenes>
     <resources>
         <image name="checkedPhoto" width="64" height="64"/>
+        <image name="coursePhoto" width="256" height="256"/>
         <image name="defaultPhoto" width="540" height="540"/>
+        <image name="golferPhoto" width="256" height="256"/>
         <image name="logoPhoto" width="256" height="256"/>
         <image name="unchekedPhoto" width="64" height="64"/>
     </resources>

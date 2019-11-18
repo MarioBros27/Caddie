@@ -14,6 +14,7 @@ class PlayerTableViewCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var handyCapLabel: UILabel!
     
     
     
