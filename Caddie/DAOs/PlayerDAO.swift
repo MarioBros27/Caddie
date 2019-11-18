@@ -12,10 +12,11 @@ import CoreData
 
 class PlayerDAO{
     
-    func addPlayer(nombre: String, id: Int){
+    func addPlayer(nombre: String){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{return}
         let managedContext = appDelegate.persistentContainer.viewContext
         let playerEntity = NSEntityDescription.entity(forEntityName: "Player", in: managedContext)
+        let id = getAllPlayersOrderedById().last?.id ?? 0
         
         let player = NSManagedObject(entity: playerEntity!, insertInto: managedContext)
         player.setValue(nombre, forKey: "nombre")
@@ -67,7 +68,7 @@ class PlayerDAO{
     }
 
     
-    func getAllPlayers() -> [Player]{
+    func getAllPlayersOrderedById() -> [Player]{
         var players = [Player]()
         //Returns a player
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -83,6 +84,31 @@ class PlayerDAO{
                 if(result.count>1){
                 let player = Player(nombre: data.value(forKey: "nombre") as! String, id: data.value(forKey: "id") as! Int, albatros: data.value(forKey: "albatros") as! Int, birdies: data.value(forKey: "birdies") as! Int, chipIns: data.value(forKey: "chipIns") as! Int, eagles: data.value(forKey: "eagles") as! Int, handycap: data.value(forKey: "handycap") as! Int, hoyEs: data.value(forKey: "hoyEs") as! Int, sandyPars: data.value(forKey: "sandyPars") as! Int)
                 players.append(player)
+                }
+            }
+        }catch{
+            print("Failed get Player request")
+        }
+        return players
+        
+        
+    }
+    func getAllPlayersOrderedByName() -> [Player]{
+        var players = [Player]()
+        //Returns a player
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
+        //Configuration of the fetch request
+        
+        fetchRequest.sortDescriptors = [NSSortDescriptor.init(key: "nombre", ascending: true)]
+        
+        do{
+            let result = try managedContext.fetch(fetchRequest)
+            for data in result as! [NSManagedObject]{
+                if(result.count>1){
+                    let player = Player(nombre: data.value(forKey: "nombre") as! String, id: data.value(forKey: "id") as! Int, albatros: data.value(forKey: "albatros") as! Int, birdies: data.value(forKey: "birdies") as! Int, chipIns: data.value(forKey: "chipIns") as! Int, eagles: data.value(forKey: "eagles") as! Int, handycap: data.value(forKey: "handycap") as! Int, hoyEs: data.value(forKey: "hoyEs") as! Int, sandyPars: data.value(forKey: "sandyPars") as! Int)
+                    players.append(player)
                 }
             }
         }catch{

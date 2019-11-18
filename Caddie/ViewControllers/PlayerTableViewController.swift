@@ -19,7 +19,7 @@ class PlayerTableViewController: UITableViewController {
         tableViewConn.tableFooterView = UIView(frame: CGRect.zero)
         // Load the sample data.
         let playerDAO = PlayerDAO()
-        players = playerDAO.getAllPlayers()
+        players = playerDAO.getAllPlayersOrderedByName()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -60,32 +60,35 @@ class PlayerTableViewController: UITableViewController {
     
     //MARK: Actions
      @IBAction func unwindToPlayersList(sender: UIStoryboardSegue) {
-        if let sourceViewController = sender.source as? EditPlayerViewController, let player = sourceViewController.player {
-            
-            // Add a new meal.
-            let newIndexPath = IndexPath(row: players.count, section: 0)
-            
-            players.append(player)
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
-        }
+        let playerDAO = PlayerDAO()
+        players = playerDAO.getAllPlayersOrderedByName()
+        tableViewConn.reloadData()
+//        if let sourceViewController = sender.source as? EditPlayerViewController, let player = sourceViewController.player {
+        
+//            // Add a new meal.
+//            let newIndexPath = IndexPath(row: players.count, section: 0)
+//
+//            players.append(player)
+//            tableView.insertRows(at: [newIndexPath], with: .automatic)
+//        }
         
     }
     
     //MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "AddItem"){
-            let navigationController = segue.destination as! UINavigationController
-            let destinationAddPlayer = navigationController.topViewController as! EditPlayerViewController
-            if(players.count>0){
-                destinationAddPlayer.newId = players[players.count-1].id + 1
-                
-            }else{
-                destinationAddPlayer.newId = 0
+//        if(segue.identifier == "AddItem"){
+//            let navigationController = segue.destination as! UINavigationController
+//            let destinationAddPlayer = navigationController.topViewController as! EditPlayerViewController
+//            if(players.count>0){
+//                destinationAddPlayer.newId = players[players.count-1].id + 1
+//
+//            }else{
+//                destinationAddPlayer.newId = 0
+//
+//            }
 
-            }
-
-        }
+//        }
     }
     //MARK: Private methods
 //    func loadSamplePlayers(){
