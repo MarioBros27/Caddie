@@ -51,7 +51,7 @@ class PlayerTableViewController: UITableViewController {
         // Configure the cell...
         // Fetches the appropriate meal for the data source layout.
         let player = players[indexPath.row]
-        print("player \(player.nombre) id = \(player.id)")
+        print("player \(String(describing: player.nombre)) id = \(player.id)")
         cell.nameLabel.text = player.nombre
         cell.photoImageView.image = UIImage(named: "defaultPhoto")
 
@@ -63,13 +63,6 @@ class PlayerTableViewController: UITableViewController {
         let playerDAO = PlayerDAO()
         players = playerDAO.getAllPlayersOrderedByName()
         tableViewConn.reloadData()
-//        if let sourceViewController = sender.source as? EditPlayerViewController, let player = sourceViewController.player {
-        
-//            // Add a new meal.
-//            let newIndexPath = IndexPath(row: players.count, section: 0)
-//
-//            players.append(player)
-//            tableView.insertRows(at: [newIndexPath], with: .automatic)
 //        }
         
     }
@@ -77,39 +70,7 @@ class PlayerTableViewController: UITableViewController {
     //MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if(segue.identifier == "AddItem"){
-//            let navigationController = segue.destination as! UINavigationController
-//            let destinationAddPlayer = navigationController.topViewController as! EditPlayerViewController
-//            if(players.count>0){
-//                destinationAddPlayer.newId = players[players.count-1].id + 1
-//
-//            }else{
-//                destinationAddPlayer.newId = 0
-//
-//            }
-
-//        }
     }
     //MARK: Private methods
-//    func loadSamplePlayers(){
-//        
-//        let photo1 = UIImage(named: "defaultPhoto")
-//        let photo2 = UIImage(named: "defaultPhoto")
-//        let photo3 = UIImage(named: "defaultPhoto")
-//        
-//        guard let player1 = Player(name: "Georgie", photo: photo1!) else {
-//            fatalError("Unable to instantiate player1")
-//        }
-//        
-//        guard let player2 = Player(name: "What?", photo: photo2!) else {
-//            fatalError("Unable to instantiate player2")
-//        }
-//        
-//        guard let player3 = Player(name: "Dafuq?", photo: photo3!) else {
-//            fatalError("Unable to instantiate player3")
-//        }
-//        
-//        players += [player1, player2, player3]
-//    }
 
 }

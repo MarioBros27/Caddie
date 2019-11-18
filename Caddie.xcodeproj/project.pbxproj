@@ -24,7 +24,6 @@
 		41784FAB23676FA500FB93E9 /* PlayerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41784FAA23676FA500FB93E9 /* PlayerTableViewController.swift */; };
 		41784FAD236770F600FB93E9 /* EditPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41784FAC236770F600FB93E9 /* EditPlayerViewController.swift */; };
 		41986BE72378935C00D0A85E /* ConfigureTeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41986BE62378935C00D0A85E /* ConfigureTeamsViewController.swift */; };
-		41986BE9237893E300D0A85E /* TeamsKindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41986BE8237893E300D0A85E /* TeamsKindViewController.swift */; };
 		41986BEB2378C52900D0A85E /* TeamsKindTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41986BEA2378C52900D0A85E /* TeamsKindTableViewController.swift */; };
 		41986BED2378C5BE00D0A85E /* TeamsKindTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41986BEC2378C5BE00D0A85E /* TeamsKindTableViewCell.swift */; };
 		41986BEF2378E73300D0A85E /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41986BEE2378E73300D0A85E /* Team.swift */; };
@@ -68,7 +67,6 @@
 		41784FAA23676FA500FB93E9 /* PlayerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewController.swift; sourceTree = "<group>"; };
 		41784FAC236770F600FB93E9 /* EditPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlayerViewController.swift; sourceTree = "<group>"; };
 		41986BE62378935C00D0A85E /* ConfigureTeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureTeamsViewController.swift; sourceTree = "<group>"; };
-		41986BE8237893E300D0A85E /* TeamsKindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsKindViewController.swift; sourceTree = "<group>"; };
 		41986BEA2378C52900D0A85E /* TeamsKindTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsKindTableViewController.swift; sourceTree = "<group>"; };
 		41986BEC2378C5BE00D0A85E /* TeamsKindTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsKindTableViewCell.swift; sourceTree = "<group>"; };
 		41986BEE2378E73300D0A85E /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
@@ -120,15 +118,14 @@
 		413C9A82237F2C0500340C7F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				41784F8A2367696A00FB93E9 /* HomeViewController.swift */,
-				41784FAC236770F600FB93E9 /* EditPlayerViewController.swift */,
-				41784FAA23676FA500FB93E9 /* PlayerTableViewController.swift */,
-				41FA555C2371D73F0015B527 /* EditCourseViewController.swift */,
-				41FA55882371F8050015B527 /* CourseTableViewController.swift */,
-				41986BE8237893E300D0A85E /* TeamsKindViewController.swift */,
-				41986BEA2378C52900D0A85E /* TeamsKindTableViewController.swift */,
 				41986BE62378935C00D0A85E /* ConfigureTeamsViewController.swift */,
+				41FA55882371F8050015B527 /* CourseTableViewController.swift */,
+				41FA555C2371D73F0015B527 /* EditCourseViewController.swift */,
+				41784FAC236770F600FB93E9 /* EditPlayerViewController.swift */,
+				41784F8A2367696A00FB93E9 /* HomeViewController.swift */,
 				417466C62379CBBE00C6B282 /* PlayGameTableViewController.swift */,
+				41784FAA23676FA500FB93E9 /* PlayerTableViewController.swift */,
+				41986BEA2378C52900D0A85E /* TeamsKindTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -330,7 +327,6 @@
 				41784FAD236770F600FB93E9 /* EditPlayerViewController.swift in Sources */,
 				417466C72379CBBE00C6B282 /* PlayGameTableViewController.swift in Sources */,
 				41784FAB23676FA500FB93E9 /* PlayerTableViewController.swift in Sources */,
-				41986BE9237893E300D0A85E /* TeamsKindViewController.swift in Sources */,
 				41FA558B2371F81E0015B527 /* CourseTableViewCell.swift in Sources */,
 				41FA555D2371D73F0015B527 /* EditCourseViewController.swift in Sources */,
 				4175F76D2381C38A000BB8EC /* DataController.swift in Sources */,

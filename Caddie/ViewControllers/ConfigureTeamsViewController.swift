@@ -18,6 +18,7 @@ class ConfigureTeamsViewController: UIViewController, UITextFieldDelegate, UIPic
     var teamsNumber: Int?
     var players = [Player]()
     var tempPlayers = [Player]()
+    var removedPlayers = [Player]()
     var teams = [Team]()
     var teamName: String?
     var currentTeamN: Int = 1
@@ -35,6 +36,8 @@ class ConfigureTeamsViewController: UIViewController, UITextFieldDelegate, UIPic
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let playerDAO = PlayerDAO()
+        players = playerDAO.getAllPlayersOrderedByName()
         textFields.append(player1TextField)
         textFields.append(player2TextField)
         textFields.append(player3TextField)
@@ -42,7 +45,6 @@ class ConfigureTeamsViewController: UIViewController, UITextFieldDelegate, UIPic
         
         teamNameTextField.delegate = self
         
-//        currentTeamN = 1
         
         hideUnusedTextFields()
 //        createDummyPlayers()
@@ -77,7 +79,7 @@ class ConfigureTeamsViewController: UIViewController, UITextFieldDelegate, UIPic
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
         
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(ConfigureTeamsViewController.dismissKeyboard))
+        let doneButton = UIBarButtonItem(title: "Listo", style: .plain, target: self, action: #selector(ConfigureTeamsViewController.doneButtonClicked))
         toolBar.setItems([doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
         
@@ -88,7 +90,7 @@ class ConfigureTeamsViewController: UIViewController, UITextFieldDelegate, UIPic
         
 
     }
-    @objc func dismissKeyboard(){
+    @objc func doneButtonClicked(){
         view.endEditing(true)
     }
     //MARK: UIPicker
@@ -123,7 +125,6 @@ class ConfigureTeamsViewController: UIViewController, UITextFieldDelegate, UIPic
         tempPlayers[pickerView.tag] = players[row]
 
     }
-    
     //MARK: Actions
     
     @IBAction func next(_ sender: UIBarButtonItem) {
@@ -134,9 +135,9 @@ class ConfigureTeamsViewController: UIViewController, UITextFieldDelegate, UIPic
          if not then delete everything and update title
          */
         teamName = teamNameTextField.text
-        var actualTeam = [Player]()
-        actualTeam.append(contentsOf: tempPlayers[..<teamsSize!])
-        teams.append(Team(name: teamName ?? "Equipo \(currentTeamN)", size: teamsSize!, players: actualTeam))
+        var teamToPlay = [Player]()
+        teamToPlay.append(contentsOf: tempPlayers[..<teamsSize!])
+        teams.append(Team(name: teamName ?? "Equipo \(currentTeamN)", size: teamsSize!, players: teamToPlay))
         
         if (currentTeamN == teamsNumber! - 1){
             //Change right button
@@ -169,15 +170,6 @@ class ConfigureTeamsViewController: UIViewController, UITextFieldDelegate, UIPic
     }
     
 
-
-//    func createDummyPlayers(){
-//        for i in 0..<10{
-//            players.append(Player(name: "Pedro \(i)", photo: UIImage.init(named: "defaultPhoto")!)!)
-//        }
-//        for i in 0..<teamsSize!{
-//            tempPlayers.append(players[i])
-//        }
-//    }
     func resetTextFields(){
         teamNameTextField.text = ""
         player1TextField.text = ""
