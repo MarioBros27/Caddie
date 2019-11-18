@@ -168,7 +168,6 @@ class ConfigureTeamsViewController: UIViewController, UITextFieldDelegate, UIPic
         destinationPlayGame.teams = teams
         
     }
-    
 
     func resetTextFields(){
         teamNameTextField.text = ""
