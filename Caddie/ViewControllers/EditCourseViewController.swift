@@ -62,55 +62,55 @@ class EditCourseViewController: UIViewController, UITextFieldDelegate, UINavigat
         par1Label.text = Int(sender.value).description
     }
     @IBAction func stepper2ValueChanged(_ sender: UIStepper) {
-        par1Label.text = Int(sender.value).description
+        par2Label.text = Int(sender.value).description
     }
     @IBAction func stepper3ValueChanged(_ sender: UIStepper) {
-        par1Label.text = Int(sender.value).description
+        par3Label.text = Int(sender.value).description
     }
     @IBAction func stepper4ValueChanged(_ sender: UIStepper) {
-        par1Label.text = Int(sender.value).description
+        par4Label.text = Int(sender.value).description
     }
     @IBAction func stepper5ValueChanged(_ sender: UIStepper) {
-        par1Label.text = Int(sender.value).description
+        par5Label.text = Int(sender.value).description
     }
     @IBAction func stepper6ValueChanged(_ sender: UIStepper) {
-        par1Label.text = Int(sender.value).description
+        par6Label.text = Int(sender.value).description
     }
     @IBAction func stepper7ValueChanged(_ sender: UIStepper) {
-        par1Label.text = Int(sender.value).description
+        par7Label.text = Int(sender.value).description
     }
     @IBAction func stepper8ValueChanged(_ sender: UIStepper) {
-        par1Label.text = Int(sender.value).description
+        par8Label.text = Int(sender.value).description
     }
     @IBAction func stepper9ValueChanged(_ sender: UIStepper) {
-        par1Label.text = Int(sender.value).description
+        par9Label.text = Int(sender.value).description
     }
     @IBAction func stepper10ValueChanged(_ sender: UIStepper) {
-        par1Label.text = Int(sender.value).description
+        par10Label.text = Int(sender.value).description
     }
     @IBAction func stepper11ValueChanged(_ sender: UIStepper) {
-        par1Label.text = Int(sender.value).description
+        par11Label.text = Int(sender.value).description
     }
     @IBAction func stepper12ValueChanged(_ sender: UIStepper) {
-        par1Label.text = Int(sender.value).description
+        par12Label.text = Int(sender.value).description
     }
     @IBAction func stepper13ValueChanged(_ sender: UIStepper) {
-        par1Label.text = Int(sender.value).description
+        par13Label.text = Int(sender.value).description
     }
     @IBAction func stepper14ValueChanged(_ sender: UIStepper) {
-        par1Label.text = Int(sender.value).description
+        par14Label.text = Int(sender.value).description
     }
     @IBAction func stepper15ValueChanged(_ sender: UIStepper) {
-        par1Label.text = Int(sender.value).description
+        par15Label.text = Int(sender.value).description
     }
     @IBAction func stepper16ValueChanged(_ sender: UIStepper) {
-        par1Label.text = Int(sender.value).description
+        par16Label.text = Int(sender.value).description
     }
     @IBAction func stepper17ValueChanged(_ sender: UIStepper) {
-        par1Label.text = Int(sender.value).description
+        par17Label.text = Int(sender.value).description
     }
     @IBAction func stepper18ValueChanged(_ sender: UIStepper) {
-        par1Label.text = Int(sender.value).description
+        par18Label.text = Int(sender.value).description
     }
     
     //MARK: UITextFieldDelegate
@@ -146,19 +146,9 @@ class EditCourseViewController: UIViewController, UITextFieldDelegate, UINavigat
             os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
             return
         }
-        let name = nameTextField.text ?? ""
-        var holes = [Int]()
-        holes.append(Int(par1TextField.text ?? "4") ?? 4)
-        holes.append(Int(par2TextField.text ?? "4") ?? 4)
-        holes.append(Int(par3TextField.text ?? "4") ?? 4)
-        holes.append(Int(par4TextField.text ?? "4") ?? 4)
-        holes.append(Int(par5TextField.text ?? "4") ?? 4)
-        holes.append(Int(par6TextField.text ?? "4") ?? 4)
-        holes.append(Int(par7TextField.text ?? "4") ?? 4)
-        holes.append(Int(par8TextField.text ?? "4") ?? 4)
-        holes.append(Int(par9TextField.text ?? "4") ?? 4)
+//        let name = nameTextField.text ?? ""
+//        var holes = [Int]()
         
-        course = Course(name: name, holes: holes)
     }
     
     //MARK: Private methods

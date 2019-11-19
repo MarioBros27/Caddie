@@ -41,6 +41,7 @@
 		41986BEB2378C52900D0A85E /* TeamsKindTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41986BEA2378C52900D0A85E /* TeamsKindTableViewController.swift */; };
 		41986BED2378C5BE00D0A85E /* TeamsKindTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41986BEC2378C5BE00D0A85E /* TeamsKindTableViewCell.swift */; };
 		41986BEF2378E73300D0A85E /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41986BEE2378E73300D0A85E /* Team.swift */; };
+		41ACEC1F2383735C0043C799 /* CourseDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ACEC1E2383735C0043C799 /* CourseDAO.swift */; };
 		41FA555D2371D73F0015B527 /* EditCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FA555C2371D73F0015B527 /* EditCourseViewController.swift */; };
 		41FA55892371F8050015B527 /* CourseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FA55882371F8050015B527 /* CourseTableViewController.swift */; };
 		41FA558B2371F81E0015B527 /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FA558A2371F81E0015B527 /* CourseTableViewCell.swift */; };
@@ -92,6 +93,7 @@
 		41986BEA2378C52900D0A85E /* TeamsKindTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsKindTableViewController.swift; sourceTree = "<group>"; };
 		41986BEC2378C5BE00D0A85E /* TeamsKindTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsKindTableViewCell.swift; sourceTree = "<group>"; };
 		41986BEE2378E73300D0A85E /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		41ACEC1E2383735C0043C799 /* CourseDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDAO.swift; sourceTree = "<group>"; };
 		41FA555C2371D73F0015B527 /* EditCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCourseViewController.swift; sourceTree = "<group>"; };
 		41FA55882371F8050015B527 /* CourseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTableViewController.swift; sourceTree = "<group>"; };
 		41FA558A2371F81E0015B527 /* CourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 		4175F7A12381D4D4000BB8EC /* DAOs */ = {
 			isa = PBXGroup;
 			children = (
+				41ACEC1E2383735C0043C799 /* CourseDAO.swift */,
 				4175F7A22381D4FA000BB8EC /* PlayerDAO.swift */,
 			);
 			path = DAOs;
@@ -217,8 +220,8 @@
 		41784F872367696A00FB93E9 /* Caddie */ = {
 			isa = PBXGroup;
 			children = (
-				41446A9723830604001E0DFB /* Model */,
 				4175F7682381B206000BB8EC /* Caddie.xcdatamodeld */,
+				41446A9723830604001E0DFB /* Model */,
 				4175F76B2381C369000BB8EC /* DataControllers */,
 				413C9A82237F2C0500340C7F /* ViewControllers */,
 				413C9A81237F2BE200340C7F /* Views */,
@@ -365,6 +368,7 @@
 				41986BEF2378E73300D0A85E /* Team.swift in Sources */,
 				4175F76A2381B206000BB8EC /* Caddie.xcdatamodeld in Sources */,
 				41446AA4238325C8001E0DFB /* Constants.swift in Sources */,
+				41ACEC1F2383735C0043C799 /* CourseDAO.swift in Sources */,
 				413C9A7F237F236500340C7F /* Player.swift in Sources */,
 				41784F892367696A00FB93E9 /* AppDelegate.swift in Sources */,
 				41986BED2378C5BE00D0A85E /* TeamsKindTableViewCell.swift in Sources */,

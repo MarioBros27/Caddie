@@ -10,16 +10,16 @@ import UIKit
 
 class Course{
     //MARK: Properties
-    var name: String?
+    var nombre: String?
     var holes = [Int]()
+    var id: Int
 //    var parCampo = Int
     
     //MARK: Initialization
-    init?(name: String, holes: [Int]){
-        guard !name.isEmpty else {
-            return nil
-        }
-        self.name = name
+    init(id: Int, nombre: String, holes: [Int]){
+        
+        self.nombre = nombre
         self.holes = holes
+        self.id = id
     }
 }
