@@ -13,13 +13,19 @@ class CourseTableViewController: UITableViewController {
     var courses = [Course]()
     var playing: Bool?
     var selectedCourse: Course?
+    var nineHoles = false
+    
+    @IBOutlet weak var play9HolesStackView: UIStackView!
+    
     
     @IBOutlet var tableViewConn: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewConn.tableFooterView = UIView(frame: CGRect.zero)
-        if(playing ?? false){
+        if(playing!){
             navigationItem.title = "Seleccione campo"
+        }else{
+            play9HolesStackView.isHidden = true
         }
         let coursedao = CourseDAO()
         courses = coursedao.getAllCoursesOrderedByName()
@@ -41,6 +47,10 @@ class CourseTableViewController: UITableViewController {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "teamsKindIdentifier"){
+            if(nineHoles){
+                selectedCourse!.holes.removeSubrange(9..<18)
+            }
+            
         let destinationTeamsKind = segue.destination as! TeamsKindTableViewController
         destinationTeamsKind.course = selectedCourse
         }
@@ -91,36 +101,14 @@ class CourseTableViewController: UITableViewController {
         tableViewConn.reloadData()
         }
         
-    
-   
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func switchChanged(_ sender: UISwitch!) {
+        
+        if(sender.isOn){
+            nineHoles = true
+        }else{
+            nineHoles = false
+        }
     }
-    */
-    //MARK: Private methods
-//    func loadSampleCourses(){
-//        let holes1 = [2,3,4,4,3,2,4,2]
-//        let holes2 = [4,3,3,2,2,3,4,3]
-//        let holes3 = [4,3,2,3,2,2,3,4]
-//
-//        guard let course1 = Course(name: "Buena bola", holes: holes1) else{
-//            fatalError("unable to instantiate Course")
-//        }
-//        guard let course2 = Course(name: "Campo sagrado", holes: holes2) else{
-//            fatalError("unable to instantiate Course")
-//        }
-//        guard let course3 = Course(name: "What", holes: holes3) else{
-//            fatalError("unable to instantiate Course")
-//        }
-//
-//        courses += [course1, course2, course3]
-//    }
     
     
 }

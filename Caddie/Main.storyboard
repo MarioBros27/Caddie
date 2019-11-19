@@ -484,9 +484,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <stackView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" alignment="center" spacing="18" id="so2-JS-kkw">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jugar 9 hoyos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAE-da-DfV">
+                                    <rect key="frame" x="0.0" y="12" width="347" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Ebd-RP-BYk">
+                                    <rect key="frame" x="365" y="6.5" width="51" height="31"/>
+                                    <connections>
+                                        <action selector="switchChanged:" destination="K28-85-mDy" eventType="valueChanged" id="TQv-GO-BL5"/>
+                                    </connections>
+                                </switch>
+                            </subviews>
+                        </stackView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CourseTableViewCell" rowHeight="90" id="fWG-hp-USl" customClass="CourseTableViewCell" customModule="Caddie" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="90"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fWG-hp-USl" id="trB-aM-ale">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="89.5"/>
@@ -524,6 +542,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="play9HolesStackView" destination="so2-JS-kkw" id="u1n-nI-q0D"/>
                         <outlet property="tableViewConn" destination="ZXG-Z7-urI" id="FqG-PR-6bO"/>
                         <segue destination="56i-3a-tY6" kind="show" identifier="teamsKindIdentifier" id="ioP-8J-3f0"/>
                     </connections>

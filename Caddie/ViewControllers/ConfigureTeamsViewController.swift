@@ -144,7 +144,12 @@ class ConfigureTeamsViewController: UIViewController, UITextFieldDelegate, UIPic
         for i in 0..<teamsSize!{
             playersToPlay.append(PlayerPlaying(id: playerIds[i], nombre: playerNames[i]))
         }
-        teamsToPlay.append(TeamPlaying(name: teamName ?? "Equipo N", players: playersToPlay))
+        if(teamName == "" || teamName == nil){
+            teamsToPlay.append(TeamPlaying(name: "Equipo \(currentTeamN)", players: playersToPlay))
+        }else{
+            teamsToPlay.append(TeamPlaying(name: teamName ?? "error" , players: playersToPlay))
+        }
+        
         
         if (currentTeamN == teamsNumber! - 1){
             //Change right button
