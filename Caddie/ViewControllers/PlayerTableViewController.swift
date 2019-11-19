@@ -18,7 +18,6 @@ class PlayerTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewConn.tableFooterView = UIView(frame: CGRect.zero)
-        // Load the sample data.
         let playerDAO = PlayerDAO()
         players = playerDAO.getAllPlayersOrderedByName()
     }

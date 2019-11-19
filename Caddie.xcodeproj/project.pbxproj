@@ -153,8 +153,8 @@
 				41784FAC236770F600FB93E9 /* EditPlayerViewController.swift */,
 				41784F8A2367696A00FB93E9 /* HomeViewController.swift */,
 				417466C62379CBBE00C6B282 /* PlayGameTableViewController.swift */,
-				41784FAA23676FA500FB93E9 /* PlayerTableViewController.swift */,
 				41446A8F2382FA91001E0DFB /* PlayerStatisticsViewController.swift */,
+				41784FAA23676FA500FB93E9 /* PlayerTableViewController.swift */,
 				41986BEA2378C52900D0A85E /* TeamsKindTableViewController.swift */,
 			);
 			path = ViewControllers;

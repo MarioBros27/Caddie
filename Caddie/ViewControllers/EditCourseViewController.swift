@@ -146,9 +146,28 @@ class EditCourseViewController: UIViewController, UITextFieldDelegate, UINavigat
             os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
             return
         }
-//        let name = nameTextField.text ?? ""
-//        var holes = [Int]()
-        
+        let name = nameTextField.text ?? ""
+        var holes = [Int]()
+        holes.append(Int(par1Label.text!)!)
+        holes.append(Int(par2Label.text!)!)
+        holes.append(Int(par3Label.text!)!)
+        holes.append(Int(par4Label.text!)!)
+        holes.append(Int(par5Label.text!)!)
+        holes.append(Int(par6Label.text!)!)
+        holes.append(Int(par7Label.text!)!)
+        holes.append(Int(par8Label.text!)!)
+        holes.append(Int(par9Label.text!)!)
+        holes.append(Int(par10Label.text!)!)
+        holes.append( Int(par11Label.text!)!)
+        holes.append( Int(par12Label.text!)!)
+        holes.append( Int(par13Label.text!)!)
+        holes.append( Int(par14Label.text!)!)
+        holes.append( Int(par15Label.text!)!)
+        holes.append( Int(par16Label.text!)!)
+        holes.append( Int(par17Label.text!)!)
+        holes.append( Int(par18Label.text!)!)
+        let coursedao = CourseDAO()
+        coursedao.addCourse(nombre: name, holes: holes)
     }
     
     //MARK: Private methods

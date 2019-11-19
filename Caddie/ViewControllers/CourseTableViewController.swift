@@ -18,12 +18,12 @@ class CourseTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewConn.tableFooterView = UIView(frame: CGRect.zero)
-        
         if(playing ?? false){
             navigationItem.title = "Seleccione campo"
         }
-        //Load the sample data
-        loadSampleCourses()
+        let coursedao = CourseDAO()
+        courses = coursedao.getAllCoursesOrderedByName()
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -62,24 +62,36 @@ class CourseTableViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance of CourseTableViewCell.")
         }
         
+        
         // Configure the cell...
         let course = courses[indexPath.row]
-        cell.nameLabel.text = course.name
+        print("course \(String(describing: course.nombre)) id = \(course.id)")
+        cell.nameLabel.text = course.nombre
         
         return cell
     }
-    //MARK: Actions
-    @IBAction func unwindToCoursesList(sender: UIStoryboardSegue) {
-        if let sourceViewController = sender.source as? EditCourseViewController, let course = sourceViewController.course {
-            
-            // Add a new meal.
-            let newIndexPath = IndexPath(row: courses.count, section: 0)
-            
-            courses.append(course)
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            let id = courses[indexPath.row].id
+            let coursedao = CourseDAO()
+            courses.remove(at: indexPath.row)
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            coursedao.deleteCourse(id: id)
+            tableView.endUpdates()
         }
         
-    }
+    }    //MARK: Actions
+    @IBAction func unwindToCoursesList(sender: UIStoryboardSegue) {
+        let coursedao = CourseDAO()
+        courses = coursedao.getAllCoursesOrderedByName()
+        tableViewConn.reloadData()
+        }
+        
+    
    
     
     /*
@@ -92,23 +104,23 @@ class CourseTableViewController: UITableViewController {
     }
     */
     //MARK: Private methods
-    func loadSampleCourses(){
-        let holes1 = [2,3,4,4,3,2,4,2]
-        let holes2 = [4,3,3,2,2,3,4,3]
-        let holes3 = [4,3,2,3,2,2,3,4]
-        
-        guard let course1 = Course(name: "Buena bola", holes: holes1) else{
-            fatalError("unable to instantiate Course")
-        }
-        guard let course2 = Course(name: "Campo sagrado", holes: holes2) else{
-            fatalError("unable to instantiate Course")
-        }
-        guard let course3 = Course(name: "What", holes: holes3) else{
-            fatalError("unable to instantiate Course")
-        }
-        
-        courses += [course1, course2, course3]
-    }
+//    func loadSampleCourses(){
+//        let holes1 = [2,3,4,4,3,2,4,2]
+//        let holes2 = [4,3,3,2,2,3,4,3]
+//        let holes3 = [4,3,2,3,2,2,3,4]
+//
+//        guard let course1 = Course(name: "Buena bola", holes: holes1) else{
+//            fatalError("unable to instantiate Course")
+//        }
+//        guard let course2 = Course(name: "Campo sagrado", holes: holes2) else{
+//            fatalError("unable to instantiate Course")
+//        }
+//        guard let course3 = Course(name: "What", holes: holes3) else{
+//            fatalError("unable to instantiate Course")
+//        }
+//
+//        courses += [course1, course2, course3]
+//    }
     
     
 }

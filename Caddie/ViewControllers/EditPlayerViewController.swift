@@ -98,7 +98,6 @@ class EditPlayerViewController: UIViewController, UITextFieldDelegate, UINavigat
         }
         let name = nameTextField.text ?? ""
         
-//        player = Player(nombre: name, id: -1, albatros: 0, birdies: 0, chipIns: 0, eagles: 0, handycap: 0, hoyEs: 0, sandyPars: 0)
         let playerDAO = PlayerDAO()
         playerDAO.addPlayer(nombre: name)
     }
