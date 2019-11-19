@@ -10,22 +10,19 @@ import UIKit
 
 class PlayGameTableViewController: UITableViewController {
     var course: Course?
-    var teamsSize: Int?
-    var teamsNumber: Int?
-    var teams = [Team]()
+    var teamsResultsForHole = [TeamPlaying]()
+    var gameResults = [Game]()
     var currentHole = 1
 
     @IBOutlet var mainTableView: UITableView!
     
     override func viewDidLoad() {
-//        mainTableView.tableFooterView = UIView(frame: CGRect.zero)
 
         super.viewDidLoad()
-//        print("Course: "+(course?.name)!)
-//        print("team size: \(teamsSize!) and teams number: \(teamsNumber!)")
-//        for team in teams{
-//            print("team: \(team.name) and count of players :\(team.players.count)")
-//        }
+        //Pass teams resultsfor hole from past selectteams view
+        //needs ids and name of the team and name of the players
+        //Don't forget they are needed to fill the cells and headers
+//Initialize gameResults
     }
 
     // MARK: - Table view data source

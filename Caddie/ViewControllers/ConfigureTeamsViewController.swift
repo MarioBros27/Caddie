@@ -17,9 +17,9 @@ class ConfigureTeamsViewController: UIViewController, UITextFieldDelegate, UIPic
     var teamsSize: Int?
     var teamsNumber: Int?
     var players = [Player]()
-    var tempPlayers = [Player]()
-    var removedPlayers = [Player]()
-    var teams = [Team]()
+    var teamsToPlay = [TeamPlaying]()
+    var playerNames = [String]()
+    var playerIds = [Int]()
     var teamName: String?
     var currentTeamN: Int = 1
     var textFields = [UITextField]()
@@ -44,7 +44,10 @@ class ConfigureTeamsViewController: UIViewController, UITextFieldDelegate, UIPic
         textFields.append(player4TextField)
         
         teamNameTextField.delegate = self
-        
+        for _ in 0..<teamsSize!{
+            playerNames.append("fake name")
+            playerIds.append(-1)
+        }
         
         hideUnusedTextFields()
 //        createDummyPlayers()
@@ -122,7 +125,9 @@ class ConfigureTeamsViewController: UIViewController, UITextFieldDelegate, UIPic
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
        
         textFields[pickerView.tag].text = players[row].nombre
-        tempPlayers[pickerView.tag] = players[row]
+//        tempPlayers[pickerView.tag] = players[row]
+        playerNames[pickerView.tag] = players[row].nombre!
+        playerIds[pickerView.tag] = players[row].id
 
     }
     //MARK: Actions
@@ -135,9 +140,11 @@ class ConfigureTeamsViewController: UIViewController, UITextFieldDelegate, UIPic
          if not then delete everything and update title
          */
         teamName = teamNameTextField.text
-        var teamToPlay = [Player]()
-        teamToPlay.append(contentsOf: tempPlayers[..<teamsSize!])
-        teams.append(Team(name: teamName ?? "Equipo \(currentTeamN)", size: teamsSize!, players: teamToPlay))
+        var playersToPlay = [PlayerPlaying]()
+        for i in 0..<teamsSize!{
+            playersToPlay.append(PlayerPlaying(id: playerIds[i], nombre: playerNames[i]))
+        }
+        teamsToPlay.append(TeamPlaying(name: teamName ?? "Equipo N", players: playersToPlay))
         
         if (currentTeamN == teamsNumber! - 1){
             //Change right button
@@ -161,12 +168,10 @@ class ConfigureTeamsViewController: UIViewController, UITextFieldDelegate, UIPic
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //Prepare for segue that shows PlayGameTableViewController
-        let destinationPlayGame = segue.destination as! PlayGameTableViewController
+        let navigationController = segue.destination as? UINavigationController
+        let destinationPlayGame = navigationController?.topViewController as! PlayGameTableViewController
         destinationPlayGame.course = course
-        destinationPlayGame.teamsSize = teamsSize
-        destinationPlayGame.teamsNumber = teamsNumber
-        destinationPlayGame.teams = teams
-        
+        destinationPlayGame.teamsResultsForHole = teamsToPlay
     }
 
     func resetTextFields(){

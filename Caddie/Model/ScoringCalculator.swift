@@ -15,12 +15,12 @@ class ScoringCalculator{
     var course : Course?
     var currentHole: Int
     
-    init(teams: [TeamPlaying], course: Course){
-        self.currentHole = 1
+    init(teamsResultsForHole: [TeamPlaying], course: Course,currentHole: Int){
+        self.currentHole = currentHole
         self.course = course
-        for i in 0..<(teams.count){
-            for j in (i + 1)..<(teams.count - 1){
-                games.append(Game(team1: teams[i], team2: teams[j]))
+        for i in 0..<(teamsResultsForHole.count - 1){
+            for j in (i + 1)..<(teamsResultsForHole.count){
+                games.append(Game(team1: teamsResultsForHole[i], team2: teamsResultsForHole[j]))
 
             }
         }
@@ -31,11 +31,13 @@ class ScoringCalculator{
 //    }
 //
 //
-    func calculateScores(){
+    func calculateScoresForHole(){
         calcPointsFromHits()
         calcPointsFromHoyEs()
         calcPointsFromSimpleBonus()
         calcPointsFromComplexBonus()
+        
+        //Returns gameResults and gameResults is updated by adding current + new points in play game view controller
         
     }
     

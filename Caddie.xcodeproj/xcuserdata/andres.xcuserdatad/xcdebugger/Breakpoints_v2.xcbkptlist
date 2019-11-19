@@ -38,15 +38,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Caddie/ViewControllers/ConfigureTeamsViewController.swift"
-            timestampString = "595792361.2553869"
+            timestampString = "595831847.868104"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "pickerView(_:didSelectRow:inComponent:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Caddie/Model/DAOs/PlayerDAO.swift"
-            timestampString = "595820187.415381"
+            timestampString = "595831847.868835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "addPlayer(nombre:)"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "addPointBirdie(id:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -74,12 +74,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Caddie/Model/DAOs/PlayerDAO.swift"
-            timestampString = "595820187.415514"
+            timestampString = "595831847.868963"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "addPlayer(nombre:)"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
+            landmarkName = "addPointBirdie(id:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Caddie/ViewControllers/PlayerTableViewController.swift"
-            timestampString = "595820187.415632"
+            timestampString = "595831847.869092"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
@@ -106,12 +106,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Caddie/Model/DAOs/PlayerDAO.swift"
-            timestampString = "595820187.415714"
+            timestampString = "595831847.869177"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "getAllPlayersOrderedById()"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
+            landmarkName = "addPointHoyEs(id:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -122,12 +122,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Caddie/Model/DAOs/PlayerDAO.swift"
-            timestampString = "595820187.415764"
+            timestampString = "595831847.8692501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "getAllPlayersOrderedByName()"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
+            landmarkName = "addPointSandyPar(id:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -138,13 +138,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Caddie/Model/DAOs/PlayerDAO.swift"
-            timestampString = "595820187.415812"
+            timestampString = "595831847.869318"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "addPlayer(nombre:)"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "addPointBirdie(id:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Caddie/ViewControllers/PlayGameTableViewController.swift"
+            timestampString = "595831847.869409"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "PlayGameTableViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

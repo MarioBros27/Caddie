@@ -21,6 +21,8 @@ class NewTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+    
     }
 
     func testPerformanceExample() {
@@ -28,6 +30,18 @@ class NewTests: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
         }
+    }
+    func addAlbatrosSuccess(){
+        let playerdao = PlayerDAO()
+        var players : [Player] = playerdao.getAllPlayersOrderedById()
+        let currentAlbatros = players[0].albatros
+        
+        playerdao.addPointAlbatros(id: 1)
+        players = playerdao.getAllPlayersOrderedById()
+        let newAlbatros = players[0].albatros
+        
+        
+        
     }
 
 }

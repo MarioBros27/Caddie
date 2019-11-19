@@ -12,12 +12,10 @@ import UIKit
 class TeamPlaying{
     
     var players = [PlayerPlaying]()
-    var size: Int
     var name: String
     
-    init(name: String, size: Int, players: [PlayerPlaying]){
+    init(name: String, players: [PlayerPlaying]){
         self.name = name
-        self.size = size
         self.players = players
     }
 }

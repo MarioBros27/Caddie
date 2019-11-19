@@ -11,7 +11,138 @@ import UIKit
 import CoreData
 
 class PlayerDAO{
-    
+    func addPointAlbatros(id: Int){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{return}
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
+        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+        do{
+            let test = try managedContext.fetch(fetchRequest)
+            var albatros = (test[0] as AnyObject).value(forKey: "albatros") as! Int
+            print("albatros = \(albatros)")
+            albatros = albatros + 1
+            let objectUpdate = test[0] as! NSManagedObject
+            objectUpdate.setValue(albatros, forKey: "albatros")
+            //ETC...
+            do{
+                try managedContext.save()
+            }catch{
+                print("error updating albatros for player \(id)")
+            }
+        }catch{
+            print("error updating albatros for player \(id)")
+        }
+    }
+    func addPointBirdie(id: Int){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{return}
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
+        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+        do{
+            let test = try managedContext.fetch(fetchRequest)
+            var birdies = (test[0] as AnyObject).value(forKey: "birdies") as! Int
+            print("birdies = \(birdies)")
+            birdies = birdies + 1
+            let objectUpdate = test[0] as! NSManagedObject
+            objectUpdate.setValue(birdies, forKey: "birdies")
+            //ETC...
+            do{
+                try managedContext.save()
+            }catch{
+                print("error updating birdies for player \(id)")
+            }
+        }catch{
+            print("error updating birdies for player \(id)")
+        }
+    }
+    func addPointChipIn(id: Int){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{return}
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
+        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+        do{
+            let test = try managedContext.fetch(fetchRequest)
+            var chipIns = (test[0] as AnyObject).value(forKey: "chipIns") as! Int
+            print("chipIns = \(chipIns)")
+            chipIns = chipIns + 1
+            let objectUpdate = test[0] as! NSManagedObject
+            objectUpdate.setValue(chipIns, forKey: "chipIns")
+            //ETC...
+            do{
+                try managedContext.save()
+            }catch{
+                print("error updating chipIns for player \(id)")
+            }
+        }catch{
+            print("error updating chipIns for player \(id)")
+        }
+    }
+    func addPointEagle(id: Int){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{return}
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
+        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+        do{
+            let test = try managedContext.fetch(fetchRequest)
+            var eagles = (test[0] as AnyObject).value(forKey: "eagles") as! Int
+            print("eagles = \(eagles)")
+            eagles = eagles + 1
+            let objectUpdate = test[0] as! NSManagedObject
+            objectUpdate.setValue(eagles, forKey: "eagles")
+            //ETC...
+            do{
+                try managedContext.save()
+            }catch{
+                print("error updating eagles for player \(id)")
+            }
+        }catch{
+            print("error updating eagles for player \(id)")
+        }
+    }
+    func addPointHoyEs(id: Int){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{return}
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
+        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+        do{
+            let test = try managedContext.fetch(fetchRequest)
+            var hoyEs = (test[0] as AnyObject).value(forKey: "hoyEs") as! Int
+            print("hoyEs = \(hoyEs)")
+            hoyEs = hoyEs + 1
+            let objectUpdate = test[0] as! NSManagedObject
+            objectUpdate.setValue(hoyEs, forKey: "hoyEs")
+            //ETC...
+            do{
+                try managedContext.save()
+            }catch{
+                print("error updating hoyEs for player \(id)")
+            }
+        }catch{
+            print("error updating hoyEs for player \(id)")
+        }
+    }
+    func addPointSandyPar(id: Int){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{return}
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
+        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+        do{
+            let test = try managedContext.fetch(fetchRequest)
+            var sandyPars = (test[0] as AnyObject).value(forKey: "sandyPars") as! Int
+            print("sandyPars = \(sandyPars)")
+            sandyPars = sandyPars + 1
+            let objectUpdate = test[0] as! NSManagedObject
+            objectUpdate.setValue(sandyPars, forKey: "sandyPars")
+            //ETC...
+            do{
+                try managedContext.save()
+            }catch{
+                print("error updating sandyPars for player \(id)")
+            }
+        }catch{
+            print("error updating sandyPars for player \(id)")
+        }
+    }
     func addPlayer(nombre: String){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{return}
         let managedContext = appDelegate.persistentContainer.viewContext

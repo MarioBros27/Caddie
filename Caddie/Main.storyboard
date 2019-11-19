@@ -641,7 +641,7 @@
                         <outlet property="player3TextField" destination="lDd-DQ-akq" id="6Uu-Fc-nSm"/>
                         <outlet property="player4TextField" destination="v81-5X-eIi" id="TSe-28-TH1"/>
                         <outlet property="teamNameTextField" destination="6O5-83-RCe" id="Uau-yR-KXY"/>
-                        <segue destination="iRL-Y4-ZRD" kind="show" identifier="playGameIdentifier" id="WcY-P9-r9u"/>
+                        <segue destination="iRL-Y4-ZRD" kind="presentation" identifier="playGameIdentifier" id="WcY-P9-r9u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c17-E7-UWC" userLabel="First Responder" sceneMemberID="firstResponder"/>

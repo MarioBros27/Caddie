@@ -10,16 +10,20 @@ import Foundation
 import UIKit
 
 class PlayerPlaying{
+    var id: Int
+    var nombre: String
     var hit: Int
     var chipIn: Bool
     var sandyPar: Bool
     var hoyEs: [Bool]
     
-    init (hit: Int, chipIn: Bool, sandyPar: Bool, hoyEs: [Bool]){
-        self.hit = hit
-        self.chipIn = chipIn
-        self.sandyPar = sandyPar
-        self.hoyEs = hoyEs
+    init (id: Int, nombre: String){
+        self.nombre = nombre
+        self.id = id
+        self.hit = 0
+        self.chipIn = false
+        self.sandyPar = false
+        self.hoyEs = [false, false, false]
     }
     
 }
