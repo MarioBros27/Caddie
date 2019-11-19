@@ -20,6 +20,8 @@ class PlayGameTableViewCell: UITableViewCell {
     @IBOutlet weak var playerNameLabel: UILabel!
     @IBOutlet weak var hitsLabel: UILabel!
     
+    @IBOutlet weak var hoyEs2Label: UILabel!
+    @IBOutlet weak var hoyEs3Label: UILabel!
     
     @IBOutlet weak var hitsStepper: UIStepper!
     

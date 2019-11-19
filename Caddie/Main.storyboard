@@ -787,7 +787,9 @@
                                     <outlet property="hitsStepper" destination="xmK-Ts-zex" id="2gP-B5-3SO"/>
                                     <outlet property="hoyEs1Button" destination="FqC-lC-FE4" id="wtc-vC-KDB"/>
                                     <outlet property="hoyEs2Button" destination="dcV-lQ-JXM" id="oZI-GT-Kl8"/>
+                                    <outlet property="hoyEs2Label" destination="lqk-Cy-dYK" id="0QY-xH-Nh6"/>
                                     <outlet property="hoyEs3Button" destination="I7Q-5c-f43" id="vQY-tc-Fzo"/>
+                                    <outlet property="hoyEs3Label" destination="ohz-CC-zbC" id="dFN-Rj-Lce"/>
                                     <outlet property="playerNameLabel" destination="ya7-nv-KSg" id="Kep-ZM-ZKJ"/>
                                     <outlet property="sandyParButton" destination="Ffd-gL-B3M" id="uYp-vk-d0m"/>
                                 </connections>

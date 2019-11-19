@@ -23,6 +23,9 @@ class PlayGameTableViewController: UITableViewController {
         //needs ids and name of the team and name of the players
         //Don't forget they are needed to fill the cells and headers
 //Initialize gameResults
+        
+        
+        hideHoyEs()
     }
 
     // MARK: - Table view data source
@@ -32,7 +35,7 @@ class PlayGameTableViewController: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
 //        return teamsNumber ?? 5
-        return 4
+        return teamsResultsForHole.count
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -45,7 +48,7 @@ class PlayGameTableViewController: UITableViewController {
         let myLabel = UILabel()
         myLabel.frame = CGRect(x: 20, y: 0, width: 320, height: 40)
         myLabel.font = UIFont.boldSystemFont(ofSize: 24)
-        myLabel.text = "Equipo N"
+        myLabel.text = "\(teamsResultsForHole[section].name)"
         
         let headerView = UIView()
         headerView.addSubview(myLabel)
@@ -55,7 +58,7 @@ class PlayGameTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
 //        return teamsSize ?? 5
-        return 2
+        return teamsResultsForHole[0].players.count
     }
     
     
@@ -66,8 +69,18 @@ class PlayGameTableViewController: UITableViewController {
         }
 //        let tryan = indexPath.section
         cell.selectionStyle = .none
-        
-        
+        cell.playerNameLabel.text = teamsResultsForHole[indexPath.section].players[indexPath.row].nombre
+        if(teamsResultsForHole.count == 2){
+            cell.hoyEs2Button.isHidden = true
+            cell.hoyEs3Button.isHidden = true
+            cell.hoyEs2Label.isHidden = true
+            cell.hoyEs3Label.isHidden = true
+
+        }
+        if(teamsResultsForHole.count == 3){
+            cell.hoyEs3Button.isHidden = true
+            cell.hoyEs3Label.isHidden = true
+        }
         return cell
     }
     
@@ -83,6 +96,11 @@ class PlayGameTableViewController: UITableViewController {
     
     }
     
+    //MARK: views functions
+    
+    func hideHoyEs(){
+        
+    }
     //MARK: BusinessFunctions
     func tryingTOgetData(){
         let indexPath = IndexPath(row: 0, section: 1)
@@ -96,7 +114,7 @@ class PlayGameTableViewController: UITableViewController {
         print("no == \(no)")
 
     }
-
+    
     /*
     // MARK: - Navigation
 
