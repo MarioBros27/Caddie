@@ -11,42 +11,57 @@ import UIKit
 
 class ScoringCalculator{
     
-    var games = [Game]()
+    var gamesForTheHole = [Game]()
     var course : Course?
-    var currentHole: Int
+    var currentHole: Int?
     
-    init(teamsResultsForHole: [TeamPlaying], course: Course,currentHole: Int){
-        self.currentHole = currentHole
+    init(course: Course){
         self.course = course
+    }
+
+    func calculateScoresForHole(teamsResultsForHole: [TeamPlaying],currentHole: Int) -> [Game]{
+        self.currentHole = currentHole
+        //This will add games that won't be reached if the scoring calculator is not
+        //initialized each single time this function is called
         for i in 0..<(teamsResultsForHole.count - 1){
             for j in (i + 1)..<(teamsResultsForHole.count){
-                games.append(Game(team1: teamsResultsForHole[i], team2: teamsResultsForHole[j]))
-
+                gamesForTheHole.append(Game(team1: teamsResultsForHole[i], team2: teamsResultsForHole[j]))
+                
             }
         }
-    }
-//
-//    func getScores() -> [Game]{
-//        return games
-//    }
-//
-//
-    func calculateScoresForHole(){
         calcPointsFromHits()
         calcPointsFromHoyEs()
         calcPointsFromSimpleBonus()
         calcPointsFromComplexBonus()
         
         //Returns gameResults and gameResults is updated by adding current + new points in play game view controller
+        return gamesForTheHole
+        
         
     }
     
     func calcPointsFromHits(){
         //acomodar jugadores de menor a mayor en temporal
+        
+        let tempGame = gamesForTheHole
+        for i in 0..<gamesForTheHole.count{
+            _ = tempGame[i].team1.players.sorted(by: { $0.hit < $1.hit })
+            _ = tempGame[i].team2.players.sorted(by: { $0.hit < $1.hit })
+        }
+        
+//        tempGame
 //        for game in games{
 //            let temp = game.team1.pla
 //
 //        }
+        for game in tempGame{
+            for i in 0..<game.team1.players.count{
+                if(game.team1.players[i].hit<game.team2.players[i].hit){
+                    
+                }
+                //What happens when there's a tie
+            }
+        }
         //For each game
         //Add game counter for each hole played and then multiply it for 2 when hole 9 and 18
         //Compare lowest with lowest, the one with lowest gets one point
@@ -62,7 +77,7 @@ class ScoringCalculator{
         //Si tienes hoyEs1  se te da punto
         //CADA equipo puede tener un solo hoyEs 1, 2 o 3 no importa solo 1
         //De una vez guardar en la base de datos
-        for game in games{
+        for game in gamesForTheHole{
             var finished = false
             for i in 0..<game.team1.players[0].hoyEs.count{
                 
@@ -97,7 +112,7 @@ class ScoringCalculator{
         //Encontraste true le das un punto al equipo y multiplicador en el 9 y en el 18
         //For each game, le asigno a tu equipo punto
         //De una vez guardar en la base de datos
-        for game in games{
+        for game in gamesForTheHole{
             
                 
                 for player in game.team1.players{
@@ -136,33 +151,33 @@ class ScoringCalculator{
         // - 3 tue -> 3 puntos albatros
         //TOdos por el multiplicador del 9 y el 18
         //De una vez guardar en la base de datos
-        for game in games{
+        for game in gamesForTheHole{
             
             
             for player in game.team1.players{
-                if(player.hit == self.course!.holes[currentHole - 1] - 1){
+                if(player.hit == self.course!.holes[currentHole! - 1] - 1){
                     //Guardar a la base de datos birdie
                     game.scoreTeam1 = game.scoreTeam1 + 1//* multiplicador del 9 y 18
                 }
-                if(player.hit == self.course!.holes[currentHole - 1] - 2){
+                if(player.hit == self.course!.holes[currentHole! - 1] - 2){
                     //Guardar a la base de datos eagle
                     game.scoreTeam1 = game.scoreTeam1 + 2//* multiplicador del 9 y 18
                 }
-                if(player.hit == self.course!.holes[currentHole - 1] - 3){
+                if(player.hit == self.course!.holes[currentHole! - 1] - 3){
                     //Guardar a la base de datos albatros
                     game.scoreTeam1 = game.scoreTeam1 + 3//* multiplicador del 9 y 18
                 }
             }
             for player in game.team2.players{
-                if(player.hit == self.course!.holes[currentHole - 1] - 1){
+                if(player.hit == self.course!.holes[currentHole! - 1] - 1){
                     //Guardar a la base de datos birdie
                     game.scoreTeam2 = game.scoreTeam2 + 1//* multiplicador del 9 y 18
                 }
-                if(player.hit == self.course!.holes[currentHole - 1] - 2){
+                if(player.hit == self.course!.holes[currentHole! - 1] - 2){
                     //Guardar a la base de datos eagle
                     game.scoreTeam2 = game.scoreTeam2 + 2//* multiplicador del 9 y 18
                 }
-                if(player.hit == self.course!.holes[currentHole - 1] - 3){
+                if(player.hit == self.course!.holes[currentHole! - 1] - 3){
                     //Guardar a la base de datos albatros
                     game.scoreTeam2 = game.scoreTeam2 + 3//* multiplicador del 9 y 18
                 }

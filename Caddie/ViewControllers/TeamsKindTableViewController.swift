@@ -27,6 +27,8 @@ class TeamsKindTableViewController: UITableViewController {
     @IBOutlet var tableViewConn: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("holes: \(course!.holes.count)")
+
         tableViewConn.tableFooterView = UIView(frame: CGRect.zero)
     }
 

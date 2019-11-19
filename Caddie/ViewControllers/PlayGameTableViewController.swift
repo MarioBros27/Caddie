@@ -23,9 +23,8 @@ class PlayGameTableViewController: UITableViewController {
         //needs ids and name of the team and name of the players
         //Don't forget they are needed to fill the cells and headers
 //Initialize gameResults
+        initializeGames()
         
-        
-        hideHoyEs()
     }
 
     // MARK: - Table view data source
@@ -96,11 +95,7 @@ class PlayGameTableViewController: UITableViewController {
     
     }
     
-    //MARK: views functions
     
-    func hideHoyEs(){
-        
-    }
     //MARK: BusinessFunctions
     func tryingTOgetData(){
         let indexPath = IndexPath(row: 0, section: 1)
@@ -113,6 +108,14 @@ class PlayGameTableViewController: UITableViewController {
         print("yes == \(yes)")
         print("no == \(no)")
 
+    }
+    func initializeGames(){
+        for i in 0..<(teamsResultsForHole.count - 1){
+            for j in (i + 1)..<(teamsResultsForHole.count){
+                gameResults.append(Game(team1: teamsResultsForHole[i], team2: teamsResultsForHole[j]))
+                
+            }
+        }
     }
     
     /*
