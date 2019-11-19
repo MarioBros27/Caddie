@@ -14,23 +14,35 @@ class EditCourseViewController: UIViewController, UITextFieldDelegate, UINavigat
     
     @IBOutlet weak var nameTextField: UITextField!
     
-    @IBOutlet weak var par1TextField: UITextField!
+    @IBOutlet weak var par1Label: UILabel!
     
-    @IBOutlet weak var par2TextField: UITextField!
+    @IBOutlet weak var par2Label: UILabel!
     
-    @IBOutlet weak var par3TextField: UITextField!
+    @IBOutlet weak var par3Label: UILabel!
     
-    @IBOutlet weak var par4TextField: UITextField!
+    @IBOutlet weak var par4Label: UILabel!
     
-    @IBOutlet weak var par5TextField: UITextField!
+    @IBOutlet weak var par5Label: UILabel!
 
-    @IBOutlet weak var par6TextField: UITextField!
+    @IBOutlet weak var par6Label: UILabel!
     
-    @IBOutlet weak var par7TextField: UITextField!
+    @IBOutlet weak var par7Label: UILabel!
     
-    @IBOutlet weak var par8TextField: UITextField!
+    @IBOutlet weak var par8Label: UILabel!
     
-    @IBOutlet weak var par9TextField: UITextField!
+    @IBOutlet weak var par9Label: UILabel!
+    
+    @IBOutlet weak var par10Label: UILabel!
+    
+    @IBOutlet weak var par11Label: UILabel!
+    @IBOutlet weak var par12Label: UILabel!
+    @IBOutlet weak var par13Label: UILabel!
+    @IBOutlet weak var par14Label: UILabel!
+    @IBOutlet weak var par15Label: UILabel!
+    @IBOutlet weak var par16Label: UILabel!
+    @IBOutlet weak var par17Label: UILabel!
+    @IBOutlet weak var par18Label: UILabel!
+    
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
@@ -44,6 +56,63 @@ class EditCourseViewController: UIViewController, UITextFieldDelegate, UINavigat
     }
     //MARK: Actions
 
+    //MARK: Steppers
+    
+    @IBAction func stepper1ValueChanged(_ sender: UIStepper) {
+        par1Label.text = Int(sender.value).description
+    }
+    @IBAction func stepper2ValueChanged(_ sender: UIStepper) {
+        par1Label.text = Int(sender.value).description
+    }
+    @IBAction func stepper3ValueChanged(_ sender: UIStepper) {
+        par1Label.text = Int(sender.value).description
+    }
+    @IBAction func stepper4ValueChanged(_ sender: UIStepper) {
+        par1Label.text = Int(sender.value).description
+    }
+    @IBAction func stepper5ValueChanged(_ sender: UIStepper) {
+        par1Label.text = Int(sender.value).description
+    }
+    @IBAction func stepper6ValueChanged(_ sender: UIStepper) {
+        par1Label.text = Int(sender.value).description
+    }
+    @IBAction func stepper7ValueChanged(_ sender: UIStepper) {
+        par1Label.text = Int(sender.value).description
+    }
+    @IBAction func stepper8ValueChanged(_ sender: UIStepper) {
+        par1Label.text = Int(sender.value).description
+    }
+    @IBAction func stepper9ValueChanged(_ sender: UIStepper) {
+        par1Label.text = Int(sender.value).description
+    }
+    @IBAction func stepper10ValueChanged(_ sender: UIStepper) {
+        par1Label.text = Int(sender.value).description
+    }
+    @IBAction func stepper11ValueChanged(_ sender: UIStepper) {
+        par1Label.text = Int(sender.value).description
+    }
+    @IBAction func stepper12ValueChanged(_ sender: UIStepper) {
+        par1Label.text = Int(sender.value).description
+    }
+    @IBAction func stepper13ValueChanged(_ sender: UIStepper) {
+        par1Label.text = Int(sender.value).description
+    }
+    @IBAction func stepper14ValueChanged(_ sender: UIStepper) {
+        par1Label.text = Int(sender.value).description
+    }
+    @IBAction func stepper15ValueChanged(_ sender: UIStepper) {
+        par1Label.text = Int(sender.value).description
+    }
+    @IBAction func stepper16ValueChanged(_ sender: UIStepper) {
+        par1Label.text = Int(sender.value).description
+    }
+    @IBAction func stepper17ValueChanged(_ sender: UIStepper) {
+        par1Label.text = Int(sender.value).description
+    }
+    @IBAction func stepper18ValueChanged(_ sender: UIStepper) {
+        par1Label.text = Int(sender.value).description
+    }
+    
     //MARK: UITextFieldDelegate
     func textFieldDidBeginEditing(_ textField: UITextField) {
         // Disable the Save button while editing.
