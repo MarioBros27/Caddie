@@ -63,7 +63,21 @@ class PlayerTableViewController: UITableViewController {
         playerIndexToSend = indexPath.row
         performSegue(withIdentifier: "playerStatisticsIdentifier", sender: self)
     }
-    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            let id = players[indexPath.row].id
+            let playerdao = PlayerDAO()
+            players.remove(at: indexPath.row)
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            playerdao.deletePlayer(id: id)
+            tableView.endUpdates()
+        }
+            
+    }
     //MARK: Actions
      @IBAction func unwindToPlayersList(sender: UIStoryboardSegue) {
         let playerDAO = PlayerDAO()

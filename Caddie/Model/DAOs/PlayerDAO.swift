@@ -16,8 +16,8 @@ class PlayerDAO{
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{return}
         let managedContext = appDelegate.persistentContainer.viewContext
         let playerEntity = NSEntityDescription.entity(forEntityName: "Player", in: managedContext)
-        let id = getAllPlayersOrderedById().last?.id ?? 0
-        
+        var id = getAllPlayersOrderedById().last?.id ?? 0
+        id = id + 1
         let player = NSManagedObject(entity: playerEntity!, insertInto: managedContext)
         player.setValue(nombre, forKey: "nombre")
         player.setValue(id, forKey: "id")
@@ -81,10 +81,8 @@ class PlayerDAO{
         do{
             let result = try managedContext.fetch(fetchRequest)
             for data in result as! [NSManagedObject]{
-                if(result.count>1){
                 let player = Player(nombre: data.value(forKey: "nombre") as! String, id: data.value(forKey: "id") as! Int, albatros: data.value(forKey: "albatros") as! Int, birdies: data.value(forKey: "birdies") as! Int, chipIns: data.value(forKey: "chipIns") as! Int, eagles: data.value(forKey: "eagles") as! Int, handycap: data.value(forKey: "handycap") as! Int, hoyEs: data.value(forKey: "hoyEs") as! Int, sandyPars: data.value(forKey: "sandyPars") as! Int)
                 players.append(player)
-                }
             }
         }catch{
             print("Failed get Player request")
@@ -106,10 +104,10 @@ class PlayerDAO{
         do{
             let result = try managedContext.fetch(fetchRequest)
             for data in result as! [NSManagedObject]{
-                if(result.count>1){
+                
                     let player = Player(nombre: data.value(forKey: "nombre") as! String, id: data.value(forKey: "id") as! Int, albatros: data.value(forKey: "albatros") as! Int, birdies: data.value(forKey: "birdies") as! Int, chipIns: data.value(forKey: "chipIns") as! Int, eagles: data.value(forKey: "eagles") as! Int, handycap: data.value(forKey: "handycap") as! Int, hoyEs: data.value(forKey: "hoyEs") as! Int, sandyPars: data.value(forKey: "sandyPars") as! Int)
                     players.append(player)
-                }
+                
             }
         }catch{
             print("Failed get Player request")
@@ -122,7 +120,7 @@ class PlayerDAO{
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{return}
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
-        fetchRequest.predicate = NSPredicate(format: "id = %@", id)
+        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
         do{
             let test = try managedContext.fetch(fetchRequest)
             
@@ -142,7 +140,7 @@ class PlayerDAO{
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{return}
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
-        fetchRequest.predicate = NSPredicate(format: "id = %@", id)
+        fetchRequest.predicate = NSPredicate(format: "id == %i", id)
         do{
             let fetchedRow = try managedContext.fetch(fetchRequest)
             
