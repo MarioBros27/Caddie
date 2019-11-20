@@ -96,7 +96,7 @@ class PlayGameTableViewController: UITableViewController {
     @IBAction func nextButtonPressed(_ sender: UIBarButtonItem) {
         
         //Get data from views **************************
-//        readDataFromViews()
+        readDataFromViews()
         
         
         //Get gameResults by calling scoring calculator don't forget to +=
@@ -140,21 +140,44 @@ class PlayGameTableViewController: UITableViewController {
       
     }
     func resetData(){
-        
+        for i in 0..<teamsResultsForHole.count{
+            for k in 0..<teamsResultsForHole[0].players.count{
+                
+                teamsResultsForHole[i].players[k].hit = 0
+                teamsResultsForHole[i].players[k].chipIn = false
+                teamsResultsForHole[i].players[k].sandyPar = false
+                teamsResultsForHole[i].players[k].hoyEs[0] = false
+                teamsResultsForHole[i].players[k].hoyEs[1] = false
+                teamsResultsForHole[i].players[k].hoyEs[2] = false
+
+            }
+        }
     }
     func addNewPoints(gameResultsForHole: [Game]){
         
     }
     func readDataFromViews(){
-        let indexPath = IndexPath(row: 0, section: 1)
         
-        let currentCell = tableView.cellForRow(at: indexPath) as! PlayGameTableViewCell
-        let hits = Int(currentCell.hitsLabel.text!)
-        print("\(hits!)")
-        let yes = currentCell.chipInButton.isSelected
-        let no = currentCell.sandyParButton.isSelected
-        print("yes == \(yes)")
-        print("no == \(no)")
+        for i in 0..<teamsResultsForHole.count{
+            for k in 0..<teamsResultsForHole[0].players.count{
+                let indexPath = IndexPath(row: k, section: i)
+                print("k = \(k), i = \(i)")
+                let currentCell = tableView.cellForRow(at: indexPath) as! PlayGameTableViewCell
+                teamsResultsForHole[i].players[k].hit = Int(currentCell.hitsLabel.text!)!
+                teamsResultsForHole[i].players[k].chipIn = currentCell.chipInButton.isSelected
+                teamsResultsForHole[i].players[k].sandyPar = currentCell.sandyParButton.isSelected
+                teamsResultsForHole[i].players[k].hoyEs[0] = currentCell.hoyEs1Button.isSelected
+                teamsResultsForHole[i].players[k].hoyEs[1] = currentCell.hoyEs2Button.isSelected
+                teamsResultsForHole[i].players[k].hoyEs[2] = currentCell.hoyEs3Button.isSelected
+                print(teamsResultsForHole[i].players[k].hit)
+                print(teamsResultsForHole[i].players[k].chipIn)
+                print(teamsResultsForHole[i].players[k].sandyPar)
+                print(teamsResultsForHole[i].players[k].hoyEs[0])
+                print(teamsResultsForHole[i].players[k].hoyEs[1])
+                print(teamsResultsForHole[i].players[k].hoyEs[2])
+
+            }
+        }
 
     }
     func initializeGames(){
