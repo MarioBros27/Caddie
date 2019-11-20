@@ -69,6 +69,9 @@ class PlayGameTableViewController: UITableViewController {
 //        let tryan = indexPath.section
         cell.selectionStyle = .none
         cell.playerNameLabel.text = teamsResultsForHole[indexPath.section].players[indexPath.row].nombre
+        cell.hoyEs1Button.isSelected = false
+        cell.hoyEs2Button.isSelected = false
+        cell.hoyEs3Button.isSelected = false
         if(teamsResultsForHole.count == 2){
             cell.hoyEs2Button.isHidden = true
             cell.hoyEs3Button.isHidden = true
@@ -80,6 +83,9 @@ class PlayGameTableViewController: UITableViewController {
             cell.hoyEs3Button.isHidden = true
             cell.hoyEs3Label.isHidden = true
         }
+        cell.hitsLabel.text = "0"
+        cell.hitsStepper.value = 0
+        
         return cell
     }
     
@@ -87,31 +93,42 @@ class PlayGameTableViewController: UITableViewController {
     @IBAction func nextButtonPressed(_ sender: UIBarButtonItem) {
         
         //Get data from views **************************
-        readDataFromViews()
+//        readDataFromViews()
         
         
         //Get gameResults by calling scoring calculator don't forget to +=
-        let scoringCalculator = ScoringCalculator(course: course!)
-        let gameResultsForHole = scoringCalculator.calculateScoresForHole(teamsResultsForHole: teamsResultsForHole, currentHole: currentHole)
-        addNewPoints(gameResultsForHole: gameResultsForHole)
+//        let scoringCalculator = ScoringCalculator(course: course!)
+//        let gameResultsForHole = scoringCalculator.calculateScoresForHole(teamsResultsForHole: teamsResultsForHole, currentHole: currentHole)
+//        addNewPoints(gameResultsForHole: gameResultsForHole)
         //Check if it's time to finish or to move to the next hole, change button title and activate
         //seque option
 
-        //Move to the next hole by reseting views
-        resetViews()
         //Now reset data for teamsResultsForTheHole
         resetData()
+        
+        //Move to the next hole by reseting views
+        resetViews()
+        
         //Change title to the next hole
         
         
         currentHole = currentHole + 1
-    
+        print("currenthole = \(currentHole)")
     }
     
     
     //MARK: BusinessFunctions
     func resetViews(){
+        mainTableView.reloadData()
+
+        for i in 0..<teamsResultsForHole.count{
+            for k in 0..<teamsResultsForHole[i].players.count{
+                let indexPath = IndexPath(row: k, section: i)
+                mainTableView.reloadRows(at: [indexPath], with: .right)
+            }
+        }
         
+      
     }
     func resetData(){
         

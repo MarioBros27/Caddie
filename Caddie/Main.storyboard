@@ -823,7 +823,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Cerrar" id="INt-lK-lZc"/>
                         <barButtonItem key="rightBarButtonItem" title="Siguiente" id="V6J-Hz-ULW">
                             <connections>
-                                <action selector="nextButtonPressed:" destination="fkR-ji-C0P" id="Dpe-sc-YgU"/>
+                                <action selector="nextButtonPressed:" destination="fkR-ji-C0P" id="RGy-e8-RwX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
