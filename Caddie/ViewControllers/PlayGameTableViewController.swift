@@ -85,7 +85,11 @@ class PlayGameTableViewController: UITableViewController {
     
     //MARK: Actions
     @IBAction func nextButtonPressed(_ sender: UIBarButtonItem) {
+        
+        //Get data from views
         tryingTOgetData()
+        
+        //
         
         //Calcular puntajes con scoringCalculator
         //Agregar puntajes obtenidos por el scoringCalculator al game para poder ver live score

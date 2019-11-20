@@ -18,7 +18,6 @@
 		41446A952382FE80001E0DFB /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41446A942382FE80001E0DFB /* Game.swift */; };
 		41446A962382FE80001E0DFB /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41446A942382FE80001E0DFB /* Game.swift */; };
 		41446A992383062F001E0DFB /* ScoringCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41446A982383062F001E0DFB /* ScoringCalculator.swift */; };
-		41446A9A2383062F001E0DFB /* ScoringCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41446A982383062F001E0DFB /* ScoringCalculator.swift */; };
 		41446A9C23830BBD001E0DFB /* ScoringCalculatorUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41446A9B23830BBD001E0DFB /* ScoringCalculatorUnitTests.swift */; };
 		41446A9E23831C42001E0DFB /* TeamPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41446A9D23831C42001E0DFB /* TeamPlaying.swift */; };
 		41446A9F23831C42001E0DFB /* TeamPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41446A9D23831C42001E0DFB /* TeamPlaying.swift */; };
@@ -386,7 +385,6 @@
 				413C9A8A237F2F5D00340C7F /* CaddieUnitTests.swift in Sources */,
 				41ACEC25238395680043C799 /* DataController.swift in Sources */,
 				41446A962382FE80001E0DFB /* Game.swift in Sources */,
-				41446A9A2383062F001E0DFB /* ScoringCalculator.swift in Sources */,
 				41ACEC2D238395820043C799 /* PlayerStatisticsViewController.swift in Sources */,
 				41446AA5238325C8001E0DFB /* Constants.swift in Sources */,
 				41ACEC27238395720043C799 /* ConfigureTeamsViewController.swift in Sources */,

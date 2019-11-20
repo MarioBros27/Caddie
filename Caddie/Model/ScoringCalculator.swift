@@ -14,21 +14,18 @@ class ScoringCalculator{
     var gamesForTheHole = [Game]()
     var course : Course?
     var currentHole: Int?
-    
+    var multiplicator = 1
     init(course: Course){
         self.course = course
     }
 
     func calculateScoresForHole(teamsResultsForHole: [TeamPlaying],currentHole: Int) -> [Game]{
         self.currentHole = currentHole
+        switchMultiplicator(currentHole: currentHole)
         //This will add games that won't be reached if the scoring calculator is not
         //initialized each single time this function is called
-        for i in 0..<(teamsResultsForHole.count - 1){
-            for j in (i + 1)..<(teamsResultsForHole.count){
-                gamesForTheHole.append(Game(team1: teamsResultsForHole[i], team2: teamsResultsForHole[j]))
-                
-            }
-        }
+        initializeGamesForTheHole(teamsResultsForHole: teamsResultsForHole,teamsSize: teamsResultsForHole.count)
+        
         calcPointsFromHits()
         calcPointsFromHoyEs()
         calcPointsFromSimpleBonus()
@@ -39,7 +36,23 @@ class ScoringCalculator{
         
         
     }
+    func initializeGamesForTheHole(teamsResultsForHole: [TeamPlaying],teamsSize: Int){
+    gamesForTheHole.removeAll()
+        for i in 0..<(teamsSize - 1){
+                for j in (i + 1)..<(teamsSize){
+                    gamesForTheHole.append(Game(team1: teamsResultsForHole[i], team2: teamsResultsForHole[j]))
     
+                }
+        }
+    }
+    
+    func switchMultiplicator(currentHole: Int){
+        if(currentHole == 9 || currentHole == 18 ){
+            multiplicator = 2
+        }else{
+            multiplicator = 1
+        }
+    }
     func calcPointsFromHits(){
         //acomodar jugadores de menor a mayor en temporal
         
@@ -49,15 +62,13 @@ class ScoringCalculator{
             _ = tempGame[i].team2.players.sorted(by: { $0.hit < $1.hit })
         }
         
-//        tempGame
-//        for game in games{
-//            let temp = game.team1.pla
-//
-//        }
         for game in tempGame{
             for i in 0..<game.team1.players.count{
                 if(game.team1.players[i].hit<game.team2.players[i].hit){
-                    
+                    game.scoreTeam1 = game.scoreTeam1 + 1
+                }
+                if(game.team1.players[i].hit>game.team2.players[i].hit){
+                    game.scoreTeam2 = game.scoreTeam2 + 1
                 }
                 //What happens when there's a tie
             }
