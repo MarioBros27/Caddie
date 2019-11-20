@@ -87,17 +87,20 @@ class PlayGameTableViewController: UITableViewController {
     @IBAction func nextButtonPressed(_ sender: UIBarButtonItem) {
         
         //Get data from views **************************
-        tryingTOgetData()
+        readDataFromViews()
         
         
         //Get gameResults by calling scoring calculator don't forget to +=
         let scoringCalculator = ScoringCalculator(course: course!)
         let gameResultsForHole = scoringCalculator.calculateScoresForHole(teamsResultsForHole: teamsResultsForHole, currentHole: currentHole)
         addNewPoints(gameResultsForHole: gameResultsForHole)
-        //Check if it's time to finish or to move to the next hole
+        //Check if it's time to finish or to move to the next hole, change button title and activate
+        //seque option
 
         //Move to the next hole by reseting views
+        resetViews()
         //Now reset data for teamsResultsForTheHole
+        resetData()
         //Change title to the next hole
         
         
@@ -107,10 +110,16 @@ class PlayGameTableViewController: UITableViewController {
     
     
     //MARK: BusinessFunctions
+    func resetViews(){
+        
+    }
+    func resetData(){
+        
+    }
     func addNewPoints(gameResultsForHole: [Game]){
         
     }
-    func tryingTOgetData(){
+    func readDataFromViews(){
         let indexPath = IndexPath(row: 0, section: 1)
         
         let currentCell = tableView.cellForRow(at: indexPath) as! PlayGameTableViewCell
