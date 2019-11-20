@@ -86,21 +86,30 @@ class PlayGameTableViewController: UITableViewController {
     //MARK: Actions
     @IBAction func nextButtonPressed(_ sender: UIBarButtonItem) {
         
-        //Get data from views
+        //Get data from views **************************
         tryingTOgetData()
         
-        //
         
-        //Calcular puntajes con scoringCalculator
-        //Agregar puntajes obtenidos por el scoringCalculator al game para poder ver live score
-        //if currentHole == 18 change next to finish
-        //Mostrar live score con nuevos puntajes
+        //Get gameResults by calling scoring calculator don't forget to +=
+        let scoringCalculator = ScoringCalculator(course: course!)
+        let gameResultsForHole = scoringCalculator.calculateScoresForHole(teamsResultsForHole: teamsResultsForHole, currentHole: currentHole)
+        addNewPoints(gameResultsForHole: gameResultsForHole)
+        //Check if it's time to finish or to move to the next hole
+
+        //Move to the next hole by reseting views
+        //Now reset data for teamsResultsForTheHole
+        //Change title to the next hole
+        
+        
         currentHole = currentHole + 1
     
     }
     
     
     //MARK: BusinessFunctions
+    func addNewPoints(gameResultsForHole: [Game]){
+        
+    }
     func tryingTOgetData(){
         let indexPath = IndexPath(row: 0, section: 1)
         

@@ -65,10 +65,10 @@ class ScoringCalculator{
         for game in tempGame{
             for i in 0..<game.team1.players.count{
                 if(game.team1.players[i].hit<game.team2.players[i].hit){
-                    game.scoreTeam1 = game.scoreTeam1 + 1
+                    game.scoreTeam1 = game.scoreTeam1 + 1 * multiplicator
                 }
                 if(game.team1.players[i].hit>game.team2.players[i].hit){
-                    game.scoreTeam2 = game.scoreTeam2 + 1
+                    game.scoreTeam2 = game.scoreTeam2 + 1 * multiplicator
                 }
                 //What happens when there's a tie
             }
@@ -95,7 +95,7 @@ class ScoringCalculator{
                 for player in game.team1.players{
                     if(player.hoyEs[i]){
                         //Guardar en la base de datos
-                        game.scoreTeam1 = game.scoreTeam1 + 1//* multiplicador del 9 y 18
+                        game.scoreTeam1 = game.scoreTeam1 + 1 * multiplicator
                         finished = true
                         break
                     }
@@ -106,7 +106,7 @@ class ScoringCalculator{
                 for player in game.team2.players{
                     if(player.hoyEs[i]){
                         //Guardar en la base de datos
-                        game.scoreTeam2 = game.scoreTeam2 + 1//* multiplicador del 9 y 18
+                        game.scoreTeam2 = game.scoreTeam2 + 1 * multiplicator
                         finished = true
                         break
                     }
@@ -129,22 +129,22 @@ class ScoringCalculator{
                 for player in game.team1.players{
                     if(player.chipIn){
                         //Guardar a la base de datos
-                        game.scoreTeam1 = game.scoreTeam1 + 1//* multiplicador del 9 y 18
+                        game.scoreTeam1 = game.scoreTeam1 + 1 * multiplicator
                     }
                     if(player.sandyPar){
                         //Guardar a la base de datos sandypar
-                        game.scoreTeam1 = game.scoreTeam1 + 1//* multiplicador del 9 y 18
+                        game.scoreTeam1 = game.scoreTeam1 + 1 * multiplicator
                         
                     }
                 }
             for player in game.team2.players{
                 if(player.chipIn){
                     //Guardar a la base de datos
-                    game.scoreTeam2 = game.scoreTeam2 + 1//* multiplicador del 9 y 18
+                    game.scoreTeam2 = game.scoreTeam2 + 1 * multiplicator
                 }
                 if(player.sandyPar){
                     //Guardar a la base de datos sandypar
-                    game.scoreTeam2 = game.scoreTeam2 + 1//* multiplicador del 9 y 18
+                    game.scoreTeam2 = game.scoreTeam2 + 1 * multiplicator
                     
                 }
             }
@@ -168,29 +168,29 @@ class ScoringCalculator{
             for player in game.team1.players{
                 if(player.hit == self.course!.holes[currentHole! - 1] - 1){
                     //Guardar a la base de datos birdie
-                    game.scoreTeam1 = game.scoreTeam1 + 1//* multiplicador del 9 y 18
+                    game.scoreTeam1 = game.scoreTeam1 + 1 * multiplicator
                 }
                 if(player.hit == self.course!.holes[currentHole! - 1] - 2){
                     //Guardar a la base de datos eagle
-                    game.scoreTeam1 = game.scoreTeam1 + 2//* multiplicador del 9 y 18
+                    game.scoreTeam1 = game.scoreTeam1 + 2 * multiplicator
                 }
                 if(player.hit == self.course!.holes[currentHole! - 1] - 3){
                     //Guardar a la base de datos albatros
-                    game.scoreTeam1 = game.scoreTeam1 + 3//* multiplicador del 9 y 18
+                    game.scoreTeam1 = game.scoreTeam1 + 3 * multiplicator
                 }
             }
             for player in game.team2.players{
                 if(player.hit == self.course!.holes[currentHole! - 1] - 1){
                     //Guardar a la base de datos birdie
-                    game.scoreTeam2 = game.scoreTeam2 + 1//* multiplicador del 9 y 18
+                    game.scoreTeam2 = game.scoreTeam2 + 1 * multiplicator
                 }
                 if(player.hit == self.course!.holes[currentHole! - 1] - 2){
                     //Guardar a la base de datos eagle
-                    game.scoreTeam2 = game.scoreTeam2 + 2//* multiplicador del 9 y 18
+                    game.scoreTeam2 = game.scoreTeam2 + 2 * multiplicator
                 }
                 if(player.hit == self.course!.holes[currentHole! - 1] - 3){
                     //Guardar a la base de datos albatros
-                    game.scoreTeam2 = game.scoreTeam2 + 3//* multiplicador del 9 y 18
+                    game.scoreTeam2 = game.scoreTeam2 + 3 * multiplicator
                 }
             }
             
