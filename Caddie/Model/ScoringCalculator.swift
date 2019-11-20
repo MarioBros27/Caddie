@@ -90,11 +90,13 @@ class ScoringCalculator{
         //De una vez guardar en la base de datos
         for k in 0..<gamesForTheHole.count{
             var finished = false
+            let playerdao = PlayerDAO()
             for i in 0..<gamesForTheHole[k].team1.players[0].hoyEs.count{
                 
                 for player in gamesForTheHole[k].team1.players{
                     if(player.hoyEs[i]){
                         //Guardar en la base de datos
+                        playerdao.addPointHoyEs(id: player.id)
                         gamesForTheHole[k].scoreTeam1 = gamesForTheHole[k].scoreTeam1 + 1 * multiplicator
                         finished = true
                         break
@@ -106,6 +108,7 @@ class ScoringCalculator{
                 for player in gamesForTheHole[k].team2.players{
                     if(player.hoyEs[i]){
                         //Guardar en la base de datos
+                        playerdao.addPointHoyEs(id: player.id)
                         gamesForTheHole[k].scoreTeam2 = gamesForTheHole[k].scoreTeam2 + 1 * multiplicator
                         finished = true
                         break
@@ -122,14 +125,18 @@ class ScoringCalculator{
         //Encontraste true le das un punto al equipo y multiplicador en el 9 y en el 18
         //For each game, le asigno a tu equipo punto
         //De una vez guardar en la base de datos
+        let playerdao = PlayerDAO()
+        
         for k in 0..<gamesForTheHole.count{
             for player in gamesForTheHole[k].team1.players{
                 if(player.chipIn){
                     //Guardar a la base de datos
+                    playerdao.addPointChipIn(id: player.id)
                     gamesForTheHole[k].scoreTeam1 = gamesForTheHole[k].scoreTeam1 + 1 * multiplicator
                 }
                 if(player.sandyPar){
                     //Guardar a la base de datos sandypar
+                    playerdao.addPointChipIn(id: player.id)
                     gamesForTheHole[k].scoreTeam1 = gamesForTheHole[k].scoreTeam1 + 1 * multiplicator
                     
                 }
@@ -137,10 +144,14 @@ class ScoringCalculator{
             for player in gamesForTheHole[k].team2.players{
                 if(player.chipIn){
                     //Guardar a la base de datos
+                    playerdao.addPointChipIn(id: player.id)
+
                     gamesForTheHole[k].scoreTeam2 = gamesForTheHole[k].scoreTeam2 + 1 * multiplicator
                 }
                 if(player.sandyPar){
                     //Guardar a la base de datos sandypar
+                    playerdao.addPointChipIn(id: player.id)
+
                     gamesForTheHole[k].scoreTeam2 = gamesForTheHole[k].scoreTeam2 + 1 * multiplicator
                     
                 }
@@ -157,32 +168,40 @@ class ScoringCalculator{
         // - 3 tue -> 3 puntos albatros
         //TOdos por el multiplicador del 9 y el 18
         //De una vez guardar en la base de datos
+        let playerdao = PlayerDAO()
+        
         for k in 0..<gamesForTheHole.count{
             for player in gamesForTheHole[k].team1.players{
                 if(player.hit == self.course!.holes[currentHole! - 1] - 1){
                     //Guardar a la base de datos birdie
+                    playerdao.addPointBirdie(id: player.id)
                     gamesForTheHole[k].scoreTeam1 = gamesForTheHole[k].scoreTeam1 + 1 * multiplicator
                 }
                 if(player.hit == self.course!.holes[currentHole! - 1] - 2){
                     //Guardar a la base de datos eagle
+                    playerdao.addPointEagle(id: player.id)
                     gamesForTheHole[k].scoreTeam1 = gamesForTheHole[k].scoreTeam1 + 2 * multiplicator
                 }
                 if(player.hit == self.course!.holes[currentHole! - 1] - 3){
                     //Guardar a la base de datos albatros
+                    playerdao.addPointAlbatros(id: player.id)
                     gamesForTheHole[k].scoreTeam1 = gamesForTheHole[k].scoreTeam1 + 3 * multiplicator
                 }
             }
             for player in gamesForTheHole[k].team2.players{
                 if(player.hit == self.course!.holes[currentHole! - 1] - 1){
                     //Guardar a la base de datos birdie
+                    playerdao.addPointBirdie(id: player.id)
                     gamesForTheHole[k].scoreTeam2 = gamesForTheHole[k].scoreTeam2 + 1 * multiplicator
                 }
                 if(player.hit == self.course!.holes[currentHole! - 1] - 2){
                     //Guardar a la base de datos eagle
+                    playerdao.addPointEagle(id: player.id)
                     gamesForTheHole[k].scoreTeam2 = gamesForTheHole[k].scoreTeam2 + 2 * multiplicator
                 }
                 if(player.hit == self.course!.holes[currentHole! - 1] - 3){
                     //Guardar a la base de datos albatros
+                    playerdao.addPointAlbatros(id: player.id)
                     gamesForTheHole[k].scoreTeam2 = gamesForTheHole[k].scoreTeam2 + 3 * multiplicator
                 }
             }
