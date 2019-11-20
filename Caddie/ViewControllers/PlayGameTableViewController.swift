@@ -94,15 +94,23 @@ class PlayGameTableViewController: UITableViewController {
     //MARK: Actions
     @IBAction func nextButtonPressed(_ sender: UIBarButtonItem) {
         
+        //Check if it's time to finish or to move to the next hole, change button title and activate
+        //seque option
+
+        if(currentHole == course!.holes.count){
+            performSegue(withIdentifier: "", sender: self)//*****************
+        }
+        if(currentHole == course!.holes.count - 1 ){
+            sender.title = "Terminar"
+        }
+        //Read data from views
+        
         readDataFromViews()
         
         //Get gameResults by calling scoring calculator don't forget to +=
         let scoringCalculator = ScoringCalculator(course: course!)
         let gameResultsForHole = scoringCalculator.calculateScoresForHole(teamsResultsForHole: teamsResultsForHole, currentHole: currentHole)
         addPointsFromHoleToTotalGameResults(gameResultsForHole: gameResultsForHole)
-        //Check if it's time to finish or to move to the next hole, change button title and activate
-        //seque option
-
         //Now reset data for teamsResultsForTheHole
         resetData()
         
@@ -110,7 +118,6 @@ class PlayGameTableViewController: UITableViewController {
         resetViews()
         
         //Change title to the next hole and increment currenHole
-        
         
         currentHole = currentHole + 1
         navigationItem.title = "\(currentHole)"
