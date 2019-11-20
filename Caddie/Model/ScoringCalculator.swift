@@ -62,17 +62,28 @@ class ScoringCalculator{
             _ = tempGame[i].team2.players.sorted(by: { $0.hit < $1.hit })
         }
         
-        for game in tempGame{
-            for i in 0..<game.team1.players.count{
-                if(game.team1.players[i].hit<game.team2.players[i].hit){
-                    game.scoreTeam1 = game.scoreTeam1 + 1 * multiplicator
+        for k in 0..<tempGame.count{
+            for i in 0..<tempGame[k].team1.players.count{
+                if(tempGame[k].team1.players[i].hit<tempGame[k].team2.players[i].hit){
+                    gamesForTheHole[k].scoreTeam1 = gamesForTheHole[k].scoreTeam1 + 1 * multiplicator
                 }
-                if(game.team1.players[i].hit>game.team2.players[i].hit){
-                    game.scoreTeam2 = game.scoreTeam2 + 1 * multiplicator
+                if(tempGame[k].team1.players[i].hit>tempGame[k].team2.players[i].hit){
+                    gamesForTheHole[k].scoreTeam2 = gamesForTheHole[k].scoreTeam2 + 1 * multiplicator
                 }
                 //What happens when there's a tie
             }
         }
+//        for game in tempGame{
+//            for i in 0..<game.team1.players.count{
+//                if(game.team1.players[i].hit<game.team2.players[i].hit){
+//                    game.scoreTeam1 = game.scoreTeam1 + 1 * multiplicator
+//                }
+//                if(game.team1.players[i].hit>game.team2.players[i].hit){
+//                    game.scoreTeam2 = game.scoreTeam2 + 1 * multiplicator
+//                }
+//                //What happens when there's a tie
+//            }
+//        }
         //For each game
         //Add game counter for each hole played and then multiply it for 2 when hole 9 and 18
         //Compare lowest with lowest, the one with lowest gets one point
