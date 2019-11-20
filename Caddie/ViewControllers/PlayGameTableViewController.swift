@@ -67,7 +67,6 @@ class PlayGameTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? PlayGameTableViewCell  else {
             fatalError("The dequeued cell is not an instance of CourseTableViewCell.")
         }
-//        let tryan = indexPath.section
         cell.selectionStyle = .none
         cell.playerNameLabel.text = teamsResultsForHole[indexPath.section].players[indexPath.row].nombre
         cell.hoyEs1Button.isSelected = false
@@ -95,14 +94,12 @@ class PlayGameTableViewController: UITableViewController {
     //MARK: Actions
     @IBAction func nextButtonPressed(_ sender: UIBarButtonItem) {
         
-        //Get data from views **************************
         readDataFromViews()
         
-        
         //Get gameResults by calling scoring calculator don't forget to +=
-//        let scoringCalculator = ScoringCalculator(course: course!)
-//        let gameResultsForHole = scoringCalculator.calculateScoresForHole(teamsResultsForHole: teamsResultsForHole, currentHole: currentHole)
-//        addNewPoints(gameResultsForHole: gameResultsForHole)
+        let scoringCalculator = ScoringCalculator(course: course!)
+        let gameResultsForHole = scoringCalculator.calculateScoresForHole(teamsResultsForHole: teamsResultsForHole, currentHole: currentHole)
+        addPointsFromHoleToTotalGameResults(gameResultsForHole: gameResultsForHole)
         //Check if it's time to finish or to move to the next hole, change button title and activate
         //seque option
 
@@ -127,6 +124,14 @@ class PlayGameTableViewController: UITableViewController {
         performSegue(withIdentifier: "LiveScoreIdentifier", sender: self)
     }
     //MARK: BusinessFunctions
+    func addPointsFromHoleToTotalGameResults(gameResultsForHole: [Game]){
+        for i in 0..<gameResultsForHole.count{
+            gameResults[i].scoreTeam1 = gameResults[i].scoreTeam1 + gameResultsForHole[i].scoreTeam1
+            gameResults[i].scoreTeam2 = gameResults[i].scoreTeam2 + gameResultsForHole[i].scoreTeam2
+        }
+    }
+    
+
     func resetViews(){
         mainTableView.reloadData()
 
@@ -152,9 +157,6 @@ class PlayGameTableViewController: UITableViewController {
 
             }
         }
-    }
-    func addNewPoints(gameResultsForHole: [Game]){
-        
     }
     func readDataFromViews(){
         
