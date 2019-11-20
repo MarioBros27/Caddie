@@ -23,6 +23,7 @@ class PlayGameTableViewController: UITableViewController {
         //needs ids and name of the team and name of the players
         //Don't forget they are needed to fill the cells and headers
 //Initialize gameResults
+        navigationItem.title = "\(currentHole)"
         initializeGames()
         
     }
@@ -72,6 +73,8 @@ class PlayGameTableViewController: UITableViewController {
         cell.hoyEs1Button.isSelected = false
         cell.hoyEs2Button.isSelected = false
         cell.hoyEs3Button.isSelected = false
+        cell.chipInButton.isSelected = false
+        cell.sandyParButton.isSelected = false
         if(teamsResultsForHole.count == 2){
             cell.hoyEs2Button.isHidden = true
             cell.hoyEs3Button.isHidden = true
@@ -109,14 +112,20 @@ class PlayGameTableViewController: UITableViewController {
         //Move to the next hole by reseting views
         resetViews()
         
-        //Change title to the next hole
+        //Change title to the next hole and increment currenHole
         
         
         currentHole = currentHole + 1
+        navigationItem.title = "\(currentHole)"
         print("currenthole = \(currentHole)")
     }
     
     
+
+    @IBAction func seeLiveScorePressed(_ sender: Any) {
+        //Segue to see live score
+        performSegue(withIdentifier: "LiveScoreIdentifier", sender: self)
+    }
     //MARK: BusinessFunctions
     func resetViews(){
         mainTableView.reloadData()
@@ -157,14 +166,18 @@ class PlayGameTableViewController: UITableViewController {
         }
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if(segue.identifier == "LiveScoreIdentifier"){
+            let destinationLiveScore = segue.destination as! LiveScoreTableViewController
+            destinationLiveScore.gameResults = gameResults
+        }
     }
-    */
+ 
 
 }

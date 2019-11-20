@@ -11,7 +11,7 @@ import UIKit
 class LiveScoreTableViewController: UITableViewController {
 
     @IBOutlet var tableViewConn: UITableView!
-    
+    var gameResults = [Game]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,23 +26,28 @@ class LiveScoreTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return gameResults.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let identifier = "LiveScoreTableViewCell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! LiveScoreTableViewCell
+        cell.team1Label.text = gameResults[indexPath.row].team1.name
+        cell.team2Label.text = gameResults[indexPath.row].team2.name
+        cell.scoreTeam1Label.text = "\( gameResults[indexPath.row].scoreTeam1)"
+        cell.scoreTeam2Label.text = "\( gameResults[indexPath.row].scoreTeam2)"
 
         // Configure the cell...
 
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.
