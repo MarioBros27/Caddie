@@ -10,6 +10,12 @@ import UIKit
 
 class FinalScoreTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var team1Label: UILabel!
+    @IBOutlet weak var team2Label: UILabel!
+    
+    @IBOutlet weak var scoreTeam1Label: UILabel!
+    
+    @IBOutlet weak var scoreTeam2Label: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

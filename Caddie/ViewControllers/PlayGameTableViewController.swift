@@ -97,9 +97,7 @@ class PlayGameTableViewController: UITableViewController {
         //Check if it's time to finish or to move to the next hole, change button title and activate
         //seque option
 
-        if(currentHole == course!.holes.count){
-            performSegue(withIdentifier: "", sender: self)//*****************
-        }
+        
         if(currentHole == course!.holes.count - 1 ){
             sender.title = "Terminar"
         }
@@ -111,6 +109,12 @@ class PlayGameTableViewController: UITableViewController {
         let scoringCalculator = ScoringCalculator(course: course!)
         let gameResultsForHole = scoringCalculator.calculateScoresForHole(teamsResultsForHole: teamsResultsForHole, currentHole: currentHole)
         addPointsFromHoleToTotalGameResults(gameResultsForHole: gameResultsForHole)
+        
+        //Go to final score view if it was the last hole
+        if(currentHole == course!.holes.count){
+            performSegue(withIdentifier: "FinalScoreIdentifier", sender: self)
+            return
+        }
         //Now reset data for teamsResultsForTheHole
         resetData()
         
@@ -209,6 +213,11 @@ class PlayGameTableViewController: UITableViewController {
             let destinationLiveScore = segue.destination as! LiveScoreTableViewController
             destinationLiveScore.gameResults = gameResults
         }
+        if(segue.identifier == "FinalScoreIdentifier"){
+            let destinationFinalScore = segue.destination as! FinalScoreTableViewController
+            destinationFinalScore.gameResults = gameResults
+        }
+        
     }
  
 

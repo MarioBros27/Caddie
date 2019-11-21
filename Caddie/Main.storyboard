@@ -833,6 +833,7 @@
                     <connections>
                         <outlet property="mainTableView" destination="Uqm-zA-NsR" id="bOC-nf-4sz"/>
                         <segue destination="LAl-I7-4aI" kind="show" identifier="LiveScoreIdentifier" id="bcS-3x-SiJ"/>
+                        <segue destination="VMp-Jb-CyZ" kind="presentation" identifier="FinalScoreIdentifier" id="Svh-CT-wfL"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ahn-MW-c2E" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -904,7 +905,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yna-bq-fjU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4613" y="1785"/>
+            <point key="canvasLocation" x="4674" y="1999"/>
         </scene>
         <!--Resultado final-->
         <scene sceneID="zbs-72-MAf">
@@ -915,7 +916,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LiveScoreTableViewCell" rowHeight="150" id="Ob6-IM-Fh9" customClass="FinalScoreTableViewCell" customModule="Caddie" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FinalScoreTableViewCell" rowHeight="150" id="Ob6-IM-Fh9" customClass="FinalScoreTableViewCell" customModule="Caddie" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ob6-IM-Fh9" id="p93-YW-9Cd">
@@ -953,10 +954,10 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="scoreTeam1Label" destination="hgg-AA-ugS" id="03K-6b-1vF"/>
-                                    <outlet property="scoreTeam2Label" destination="VAB-nm-GIN" id="nOA-wz-3w0"/>
-                                    <outlet property="team1Label" destination="hGQ-LE-SlY" id="0pV-33-rdr"/>
-                                    <outlet property="team2Label" destination="Wbo-3E-iE4" id="m2z-jJ-G5d"/>
+                                    <outlet property="scoreTeam1Label" destination="hgg-AA-ugS" id="OgF-3V-WFm"/>
+                                    <outlet property="scoreTeam2Label" destination="VAB-nm-GIN" id="Sq9-oc-AMo"/>
+                                    <outlet property="team1Label" destination="hGQ-LE-SlY" id="eam-fH-cBP"/>
+                                    <outlet property="team2Label" destination="Wbo-3E-iE4" id="fHM-fB-vGo"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -965,9 +966,17 @@
                             <outlet property="delegate" destination="e0Z-QW-D4S" id="BOz-1H-DOW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="U6L-gq-LNe"/>
+                    <navigationItem key="navigationItem" id="U6L-gq-LNe">
+                        <barButtonItem key="rightBarButtonItem" title="OK" id="roN-j0-hdg">
+                            <connections>
+                                <action selector="okayHasBeenPressed:" destination="e0Z-QW-D4S" id="zEP-fE-VTb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="mainTableView" destination="6Sh-Ia-cIE" id="3o1-0t-bac"/>
                         <outlet property="tableView" destination="6Sh-Ia-cIE" id="YAG-ha-M8b"/>
+                        <segue destination="lCL-Lx-eFb" kind="presentation" identifier="HomeIdentifier" id="YQB-4q-2zR"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wAv-E6-19A" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1267,7 +1276,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rW1-Vx-r10" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5392.753623188406" y="1476.5625"/>
+            <point key="canvasLocation" x="4558" y="1193"/>
         </scene>
     </scenes>
     <resources>
