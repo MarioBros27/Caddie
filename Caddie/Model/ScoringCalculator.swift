@@ -58,8 +58,8 @@ class ScoringCalculator{
         
         let tempGame = gamesForTheHole
         for i in 0..<gamesForTheHole.count{
-            _ = tempGame[i].team1.players.sorted(by: { $0.hit < $1.hit })
-            _ = tempGame[i].team2.players.sorted(by: { $0.hit < $1.hit })
+            tempGame[i].team1.players = tempGame[i].team1.players.sorted(by: { $0.hit < $1.hit })
+            tempGame[i].team2.players = tempGame[i].team2.players.sorted(by: { $0.hit < $1.hit })
         }
         
         for k in 0..<tempGame.count{
