@@ -14,6 +14,7 @@ class LiveScoreTableViewController: UITableViewController {
     var gameResults = [Game]()
     override func viewDidLoad() {
         super.viewDidLoad()
+//        tableViewConn.tableFooterView = UIView(frame: CGRect.zero)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

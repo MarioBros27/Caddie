@@ -169,6 +169,8 @@ class PlayGameTableViewController: UITableViewController {
         //Get gameResults by calling scoring calculator don't forget to +=
         let scoringCalculator = ScoringCalculator(course: course!)
         let gameResultsForHole = scoringCalculator.calculateScoresForHole(teamsResultsForHole: teamsResultsForHole, currentHole: currentHole)
+        
+        
         addPointsFromHoleToTotalGameResults(gameResultsForHole: gameResultsForHole)
         
         //Go to final score view if it was the last hole
