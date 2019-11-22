@@ -37,19 +37,11 @@ class PlayGameTableViewController: UITableViewController {
 //        return teamsNumber ?? 5
         return teamsResultsForHole.count
     }
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = mainTableView.cellForRow(at: indexPath) as! PlayGameTableViewCell
-        print("didselectrow")
-        teamsResultsForHole[indexPath.section].players[indexPath.row].hit = Int(cell.hitsLabel.text!)!
-        teamsResultsForHole[indexPath.section].players[indexPath.row].chipIn = cell.chipInButton.isSelected
-        teamsResultsForHole[indexPath.section].players[indexPath.row].sandyPar = cell.sandyParButton.isSelected
-        teamsResultsForHole[indexPath.section].players[indexPath.row].hoyEs[0] = cell.hoyEs1Button.isSelected
-        
-        teamsResultsForHole[indexPath.section].players[indexPath.row].hoyEs[1] = cell.hoyEs2Button.isSelected
-        teamsResultsForHole[indexPath.section].players[indexPath.row].hoyEs[2] = cell.hoyEs3Button.isSelected
-
-
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        print("I'm heree nigga")
     }
+    
+   
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 //        return teams[section].name
         return "test"
@@ -81,11 +73,18 @@ class PlayGameTableViewController: UITableViewController {
         }
         cell.selectionStyle = .none
         cell.playerNameLabel.text = teamsResultsForHole[indexPath.section].players[indexPath.row].nombre
-        cell.hoyEs1Button.isSelected = false
-        cell.hoyEs2Button.isSelected = false
-        cell.hoyEs3Button.isSelected = false
-        cell.chipInButton.isSelected = false
-        cell.sandyParButton.isSelected = false
+        cell.hitsLabel.text = "\(teamsResultsForHole[indexPath.section].players[indexPath.row].hit)"
+        cell.hitsStepper.value = Double(teamsResultsForHole[indexPath.section].players[indexPath.row].hit)
+        cell.chipInButton.isSelected = teamsResultsForHole[indexPath.section].players[indexPath.row].chipIn
+        cell.sandyParButton.isSelected = teamsResultsForHole[indexPath.section].players[indexPath.row].sandyPar
+        cell.hoyEs1Button.isSelected = teamsResultsForHole[indexPath.section].players[indexPath.row].hoyEs[0]
+        cell.hoyEs2Button.isSelected = teamsResultsForHole[indexPath.section].players[indexPath.row].hoyEs[1]
+        cell.hoyEs3Button.isSelected = teamsResultsForHole[indexPath.section].players[indexPath.row].hoyEs[2]
+//        cell.hoyEs1Button.isSelected = false
+//        cell.hoyEs2Button.isSelected = false
+//        cell.hoyEs3Button.isSelected = false
+//        cell.chipInButton.isSelected = false
+//        cell.sandyParButton.isSelected = false
         if(teamsResultsForHole.count == 2){
             cell.hoyEs2Button.isHidden = true
             cell.hoyEs3Button.isHidden = true
@@ -97,13 +96,63 @@ class PlayGameTableViewController: UITableViewController {
             cell.hoyEs3Button.isHidden = true
             cell.hoyEs3Label.isHidden = true
         }
-        cell.hitsLabel.text = "0"
-        cell.hitsStepper.value = 0
+//        cell.hitsLabel.text = "1"
+//        cell.hitsStepper.value = 1
         
         return cell
     }
     
     //MARK: Actions
+    
+    @IBAction func stepperValueChanged(_ sender: UIStepper) {
+        let cell = sender.superview!.superview as! UITableViewCell
+        let indexpath = mainTableView.indexPath(for: cell)
+        
+        teamsResultsForHole[indexpath!.section].players[indexpath!.row].hit = Int(sender.value)
+        print("section: \(indexpath!.section) row:\(indexpath!.row) value: \(sender.value)")
+        
+    }
+    
+    
+    @IBAction func chipInValueChanged(_ sender: UIButton) {
+        let cell = sender.superview!.superview as! UITableViewCell
+        let indexpath = mainTableView.indexPath(for: cell)
+        teamsResultsForHole[indexpath!.section].players[indexpath!.row].chipIn = sender.isSelected
+        print("section: \(indexpath!.section) row:\(indexpath!.row) value: \(sender.isSelected)")
+        
+    }
+    
+    
+    @IBAction func sandyParValueChanged(_ sender: UIButton) {
+        let cell = sender.superview!.superview as! UITableViewCell
+        let indexpath = mainTableView.indexPath(for: cell)
+        teamsResultsForHole[indexpath!.section].players[indexpath!.row].sandyPar = sender.isSelected
+        print("section: \(indexpath!.section) row:\(indexpath!.row) value: \(sender.isSelected)")
+    }
+    
+    @IBAction func hoyEs1ValueChanged(_ sender: UIButton) {
+        
+        let cell = sender.superview!.superview as! UITableViewCell
+        let indexpath = mainTableView.indexPath(for: cell)
+        teamsResultsForHole[indexpath!.section].players[indexpath!.row].hoyEs[0] = sender.isSelected
+        print("section: \(indexpath!.section) row:\(indexpath!.row) value: \(sender.isSelected)")
+    }
+    
+    @IBAction func hoyEs2ValueChanged(_ sender: UIButton) {
+        let cell = sender.superview!.superview as! UITableViewCell
+        let indexpath = mainTableView.indexPath(for: cell)
+        teamsResultsForHole[indexpath!.section].players[indexpath!.row].hoyEs[1] = sender.isSelected
+        print("section: \(indexpath!.section) row:\(indexpath!.row) value: \(sender.isSelected)")
+    }
+    
+    @IBAction func hoyEs3ValueChanged(_ sender: UIButton) {
+        let cell = sender.superview!.superview as! UITableViewCell
+        let indexpath = mainTableView.indexPath(for: cell)
+        teamsResultsForHole[indexpath!.section].players[indexpath!.row].hoyEs[2] = sender.isSelected
+        print("section: \(indexpath!.section) row:\(indexpath!.row) value: \(sender.isSelected)")
+    }
+    
+    
     @IBAction func nextButtonPressed(_ sender: UIBarButtonItem) {
         
         //Check if it's time to finish or to move to the next hole, change button title and activate
@@ -140,11 +189,14 @@ class PlayGameTableViewController: UITableViewController {
         print("currenthole = \(currentHole)")
     }
     
-    
 
     @IBAction func seeLiveScorePressed(_ sender: Any) {
         //Segue to see live score
         performSegue(withIdentifier: "LiveScoreIdentifier", sender: self)
+    }
+    
+    @IBAction func closeButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "ClosePlayGameIdentifier", sender: self)
     }
     //MARK: BusinessFunctions
     func addPointsFromHoleToTotalGameResults(gameResultsForHole: [Game]){
@@ -171,7 +223,7 @@ class PlayGameTableViewController: UITableViewController {
         for i in 0..<teamsResultsForHole.count{
             for k in 0..<teamsResultsForHole[0].players.count{
                 
-                teamsResultsForHole[i].players[k].hit = 0
+                teamsResultsForHole[i].players[k].hit = 1
                 teamsResultsForHole[i].players[k].chipIn = false
                 teamsResultsForHole[i].players[k].sandyPar = false
                 teamsResultsForHole[i].players[k].hoyEs[0] = false

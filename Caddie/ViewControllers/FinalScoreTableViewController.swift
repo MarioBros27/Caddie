@@ -15,6 +15,8 @@ class FinalScoreTableViewController: UITableViewController {
     var gameResults = [Game]()
     
     override func viewDidLoad() {
+        mainTableView.tableFooterView = UIView(frame: CGRect.zero)
+
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations

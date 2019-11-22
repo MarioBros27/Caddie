@@ -20,7 +20,7 @@ class PlayerPlaying{
     init (id: Int, nombre: String){
         self.nombre = nombre
         self.id = id
-        self.hit = 0
+        self.hit = 1
         self.chipIn = false
         self.sandyPar = false
         self.hoyEs = [false, false, false]

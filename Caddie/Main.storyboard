@@ -728,6 +728,7 @@
                                             <state key="selected" backgroundImage="checkedPhoto"/>
                                             <connections>
                                                 <action selector="chipInSelectionChanged:" destination="CXh-2u-Ebf" eventType="touchUpInside" id="jdL-c4-D1b"/>
+                                                <action selector="chipInValueChanged:" destination="fkR-ji-C0P" eventType="touchUpInside" id="SEg-9E-WCk"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sandy par" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeq-ex-ofd">
@@ -744,6 +745,7 @@
                                             <state key="selected" image="checkedPhoto"/>
                                             <connections>
                                                 <action selector="sandyParSelectionChanged:" destination="CXh-2u-Ebf" eventType="touchUpInside" id="zb4-VY-MLp"/>
+                                                <action selector="sandyParValueChanged:" destination="fkR-ji-C0P" eventType="touchUpInside" id="6gp-sz-QXp"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hoy es 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqk-Cy-dYK">
@@ -760,6 +762,7 @@
                                             <state key="selected" image="checkedPhoto"/>
                                             <connections>
                                                 <action selector="hoyEs2SelectionChanged:" destination="CXh-2u-Ebf" eventType="touchUpInside" id="0t1-Bb-zsW"/>
+                                                <action selector="hoyEs2ValueChanged:" destination="fkR-ji-C0P" eventType="touchUpInside" id="Csj-RB-6BY"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hoy es 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohz-CC-zbC">
@@ -776,6 +779,7 @@
                                             <state key="selected" image="checkedPhoto"/>
                                             <connections>
                                                 <action selector="hoyEs3SelectionChanged:" destination="CXh-2u-Ebf" eventType="touchUpInside" id="Rgr-ui-Egv"/>
+                                                <action selector="hoyEs3ValueChanged:" destination="fkR-ji-C0P" eventType="touchUpInside" id="ADx-zZ-dQv"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hoy es 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jN7-vh-wrj">
@@ -792,12 +796,14 @@
                                             <state key="selected" image="checkedPhoto"/>
                                             <connections>
                                                 <action selector="hoyEs1SelectionChanged:" destination="CXh-2u-Ebf" eventType="touchUpInside" id="t3i-lH-dH9"/>
+                                                <action selector="hoyEs1ValueChanged:" destination="fkR-ji-C0P" eventType="touchUpInside" id="xFX-fv-BmX"/>
                                             </connections>
                                         </button>
                                         <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" value="1" minimumValue="1" maximumValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="xmK-Ts-zex">
                                             <rect key="frame" x="300" y="71" width="94" height="29"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <connections>
+                                                <action selector="stepperValueChanged:" destination="fkR-ji-C0P" eventType="valueChanged" id="CSl-zB-Zh8"/>
                                                 <action selector="stepperValueChanged:" destination="CXh-2u-Ebf" eventType="valueChanged" id="cqS-w5-30C"/>
                                             </connections>
                                         </stepper>
@@ -823,7 +829,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="4" id="Jmg-hS-rmZ">
-                        <barButtonItem key="leftBarButtonItem" title="Cerrar" id="INt-lK-lZc"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cerrar" id="INt-lK-lZc">
+                            <connections>
+                                <action selector="closeButtonPressed:" destination="fkR-ji-C0P" id="P3J-Th-com"/>
+                                <segue destination="lCL-Lx-eFb" kind="presentation" identifier="ClosePlayGameIdentifier" id="Mlh-Qs-6SY"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Siguiente" id="V6J-Hz-ULW">
                             <connections>
                                 <action selector="nextButtonPressed:" destination="fkR-ji-C0P" id="RGy-e8-RwX"/>
@@ -1287,4 +1298,7 @@
         <image name="logoPhoto" width="256" height="256"/>
         <image name="unchekedPhoto" width="64" height="64"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Mlh-Qs-6SY"/>
+    </inferredMetricsTieBreakers>
 </document>
