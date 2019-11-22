@@ -92,7 +92,7 @@ class TeamsKindTableViewController: UITableViewController {
             teamsNumber = 3
         case ._4vs4:
             teamsSize = 4
-            teamsNumber = 4
+            teamsNumber = 2
         }
     }
 }
