@@ -17,7 +17,7 @@ class PlayGameTableViewController: UITableViewController {
     @IBOutlet var mainTableView: UITableView!
     
     override func viewDidLoad() {
-
+        currentHole = 1
         super.viewDidLoad()
         //Pass teams resultsfor hole from past selectteams view
         //needs ids and name of the team and name of the players
@@ -37,7 +37,19 @@ class PlayGameTableViewController: UITableViewController {
 //        return teamsNumber ?? 5
         return teamsResultsForHole.count
     }
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = mainTableView.cellForRow(at: indexPath) as! PlayGameTableViewCell
+        print("didselectrow")
+        teamsResultsForHole[indexPath.section].players[indexPath.row].hit = Int(cell.hitsLabel.text!)!
+        teamsResultsForHole[indexPath.section].players[indexPath.row].chipIn = cell.chipInButton.isSelected
+        teamsResultsForHole[indexPath.section].players[indexPath.row].sandyPar = cell.sandyParButton.isSelected
+        teamsResultsForHole[indexPath.section].players[indexPath.row].hoyEs[0] = cell.hoyEs1Button.isSelected
+        
+        teamsResultsForHole[indexPath.section].players[indexPath.row].hoyEs[1] = cell.hoyEs2Button.isSelected
+        teamsResultsForHole[indexPath.section].players[indexPath.row].hoyEs[2] = cell.hoyEs3Button.isSelected
+
+
+    }
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 //        return teams[section].name
         return "test"
@@ -103,7 +115,7 @@ class PlayGameTableViewController: UITableViewController {
         }
         //Read data from views
         
-        readDataFromViews()
+//        readDataFromViews()
         
         //Get gameResults by calling scoring calculator don't forget to +=
         let scoringCalculator = ScoringCalculator(course: course!)

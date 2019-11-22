@@ -15,7 +15,7 @@ class PlayerDAO{
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{return}
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
-        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+        fetchRequest.predicate = NSPredicate(format: "id == %i", id)
         do{
             let test = try managedContext.fetch(fetchRequest)
             var albatros = (test[0] as AnyObject).value(forKey: "albatros") as! Int
@@ -37,7 +37,7 @@ class PlayerDAO{
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{return}
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
-        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+        fetchRequest.predicate = NSPredicate(format: "id == %i", id)
         do{
             let test = try managedContext.fetch(fetchRequest)
             var birdies = (test[0] as AnyObject).value(forKey: "birdies") as! Int
@@ -59,7 +59,7 @@ class PlayerDAO{
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{return}
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
-        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+        fetchRequest.predicate = NSPredicate(format: "id == %i", id)
         do{
             let test = try managedContext.fetch(fetchRequest)
             var chipIns = (test[0] as AnyObject).value(forKey: "chipIns") as! Int
@@ -81,7 +81,7 @@ class PlayerDAO{
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{return}
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
-        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+        fetchRequest.predicate = NSPredicate(format: "id == %i", id)
         do{
             let test = try managedContext.fetch(fetchRequest)
             var eagles = (test[0] as AnyObject).value(forKey: "eagles") as! Int
@@ -103,7 +103,7 @@ class PlayerDAO{
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{return}
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
-        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+        fetchRequest.predicate = NSPredicate(format: "id == %i", id)
         do{
             let test = try managedContext.fetch(fetchRequest)
             var hoyEs = (test[0] as AnyObject).value(forKey: "hoyEs") as! Int
@@ -125,7 +125,7 @@ class PlayerDAO{
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{return}
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
-        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+        fetchRequest.predicate = NSPredicate(format: "id == %i", id)
         do{
             let test = try managedContext.fetch(fetchRequest)
             var sandyPars = (test[0] as AnyObject).value(forKey: "sandyPars") as! Int
@@ -182,7 +182,7 @@ class PlayerDAO{
         //Configuration of the fetch request
         
         fetchRequest.fetchLimit = 1
-//        fetchRequest.predicate = NSPredicate(format: "id = %@", id)
+//        fetchRequest.predicate = NSPredicate(format: "id = %i", id)
 //        fetchRequest.sortDescriptors = [NSSortDescriptor.init(key: "name", ascending: false)]
         
         do{
@@ -251,7 +251,7 @@ class PlayerDAO{
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{return}
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
-        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+        fetchRequest.predicate = NSPredicate(format: "id == %i", id)
         do{
             let test = try managedContext.fetch(fetchRequest)
             
