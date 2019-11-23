@@ -121,7 +121,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Lista de jugadores" id="YGY-XZ-FCu">
-                        <barButtonItem key="backBarButtonItem" title="Hola" id="baD-3Z-AZr"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="h1s-EH-PLg">
                             <connections>
                                 <segue destination="dy6-ll-sX6" kind="presentation" identifier="AddItem" id="jRX-HA-V2S"/>
@@ -1299,6 +1298,6 @@
         <image name="unchekedPhoto" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Mlh-Qs-6SY"/>
+        <segue reference="YQB-4q-2zR"/>
     </inferredMetricsTieBreakers>
 </document>
