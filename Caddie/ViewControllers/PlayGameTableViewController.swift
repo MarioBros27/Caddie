@@ -280,7 +280,8 @@ class PlayGameTableViewController: UITableViewController {
             destinationLiveScore.gameResults = gameResults
         }
         if(segue.identifier == "FinalScoreIdentifier"){
-            let destinationFinalScore = segue.destination as! FinalScoreTableViewController
+            let navigationController = segue.destination as? UINavigationController
+            let destinationFinalScore = navigationController?.topViewController as! FinalScoreTableViewController
             destinationFinalScore.gameResults = gameResults
         }
         
