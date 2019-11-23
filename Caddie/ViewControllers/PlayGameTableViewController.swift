@@ -157,14 +157,12 @@ class PlayGameTableViewController: UITableViewController {
         
         //Check if it's time to finish or to move to the next hole, change button title and activate
         //seque option
-
         
         if(currentHole == course!.holes.count - 1 ){
             sender.title = "Terminar"
         }
         //Read data from views
         
-//        readDataFromViews()
         
         //Get gameResults by calling scoring calculator don't forget to +=
         let scoringCalculator = ScoringCalculator(course: course!)
