@@ -113,26 +113,7 @@ class CourseDAO{
         
         
     }
-//    func updatePlayer(id: Int){
-//        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{return}
-//        let managedContext = appDelegate.persistentContainer.viewContext
-//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Course")
-//        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
-//        do{
-//            let test = try managedContext.fetch(fetchRequest)
-//
-//            let objectUpdate = test[0] as! NSManagedObject
-//            objectUpdate.setValue("newvalue**nah", forKey: "birdies")
-//            //ETC...
-//            do{
-//                try managedContext.save()
-//            }catch{
-//                print("error updating the course \(id)")
-//            }
-//        }catch{
-//            print("error trying to update course \(id)")
-//        }
-//    }
+    
     func deleteCourse(id: Int){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{return}
         let managedContext = appDelegate.persistentContainer.viewContext
