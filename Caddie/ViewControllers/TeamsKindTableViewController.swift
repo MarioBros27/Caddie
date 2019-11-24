@@ -95,4 +95,5 @@ class TeamsKindTableViewController: UITableViewController {
             teamsNumber = 2
         }
     }
+    
 }
