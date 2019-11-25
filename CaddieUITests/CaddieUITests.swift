@@ -27,7 +27,16 @@ class CaddieUITests: XCTestCase {
     }
 
 
-    
+    func testSeeStatistics(){
+        let app = XCUIApplication()
+      app.buttons["Jugadores"].tap()
+        let tablesQuery = app.tables
+        tablesQuery.staticTexts["Ivan"].tap()
+        
+        app.navigationBars["Caddie.PlayerStatisticsView"].buttons["Lista de jugadores"].tap()
+        app.navigationBars["Lista de jugadores"].buttons["Caddie"].tap()
+        
+    }
     func testPlayGame(){
         let app = XCUIApplication()
         
