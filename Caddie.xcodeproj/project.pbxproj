@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		4117556F237F8A8F001848CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4117556E237F8A8E001848CB /* Main.storyboard */; };
 		413C9A7F237F236500340C7F /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413C9A7E237F236500340C7F /* Player.swift */; };
-		413C9A8A237F2F5D00340C7F /* CaddieUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413C9A89237F2F5D00340C7F /* CaddieUnitTests.swift */; };
-		413C9A92237F315800340C7F /* NewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413C9A91237F315800340C7F /* NewTests.swift */; };
 		413C9A94237F725E00340C7F /* PlayGameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413C9A93237F725E00340C7F /* PlayGameTableViewCell.swift */; };
 		41446A902382FA91001E0DFB /* PlayerStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41446A8F2382FA91001E0DFB /* PlayerStatisticsViewController.swift */; };
 		41446A922382FE5C001E0DFB /* PlayerPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41446A912382FE5C001E0DFB /* PlayerPlaying.swift */; };
@@ -18,7 +16,6 @@
 		41446A952382FE80001E0DFB /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41446A942382FE80001E0DFB /* Game.swift */; };
 		41446A962382FE80001E0DFB /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41446A942382FE80001E0DFB /* Game.swift */; };
 		41446A992383062F001E0DFB /* ScoringCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41446A982383062F001E0DFB /* ScoringCalculator.swift */; };
-		41446A9C23830BBD001E0DFB /* ScoringCalculatorUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41446A9B23830BBD001E0DFB /* ScoringCalculatorUnitTests.swift */; };
 		41446A9E23831C42001E0DFB /* TeamPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41446A9D23831C42001E0DFB /* TeamPlaying.swift */; };
 		41446A9F23831C42001E0DFB /* TeamPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41446A9D23831C42001E0DFB /* TeamPlaying.swift */; };
 		41446AA1238325BD001E0DFB /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41446AA0238325BD001E0DFB /* CustomButton.swift */; };
@@ -90,15 +87,11 @@
 		4117556E237F8A8E001848CB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		413C9A7E237F236500340C7F /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		413C9A87237F2F5D00340C7F /* CaddieUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CaddieUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		413C9A89237F2F5D00340C7F /* CaddieUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaddieUnitTests.swift; sourceTree = "<group>"; };
-		413C9A8B237F2F5D00340C7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		413C9A91237F315800340C7F /* NewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTests.swift; sourceTree = "<group>"; };
 		413C9A93237F725E00340C7F /* PlayGameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGameTableViewCell.swift; sourceTree = "<group>"; };
 		41446A8F2382FA91001E0DFB /* PlayerStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatisticsViewController.swift; sourceTree = "<group>"; };
 		41446A912382FE5C001E0DFB /* PlayerPlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPlaying.swift; sourceTree = "<group>"; };
 		41446A942382FE80001E0DFB /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		41446A982383062F001E0DFB /* ScoringCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoringCalculator.swift; sourceTree = "<group>"; };
-		41446A9B23830BBD001E0DFB /* ScoringCalculatorUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoringCalculatorUnitTests.swift; sourceTree = "<group>"; };
 		41446A9D23831C42001E0DFB /* TeamPlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamPlaying.swift; sourceTree = "<group>"; };
 		41446AA0238325BD001E0DFB /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = ../../../CustomButton.swift; sourceTree = "<group>"; };
 		41446AA3238325C8001E0DFB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../../../Constants.swift; sourceTree = "<group>"; };
@@ -114,8 +107,6 @@
 		41784F8F2367696C00FB93E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41784F922367696C00FB93E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41784F942367696C00FB93E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		41784F9D2367696C00FB93E9 /* CaddieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaddieTests.swift; sourceTree = "<group>"; };
-		41784F9F2367696C00FB93E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41784FA823676B1C00FB93E9 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		41784FAA23676FA500FB93E9 /* PlayerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewController.swift; sourceTree = "<group>"; };
 		41784FAC236770F600FB93E9 /* EditPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlayerViewController.swift; sourceTree = "<group>"; };
@@ -206,17 +197,6 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		413C9A88237F2F5D00340C7F /* CaddieUnitTests */ = {
-			isa = PBXGroup;
-			children = (
-				413C9A89237F2F5D00340C7F /* CaddieUnitTests.swift */,
-				413C9A8B237F2F5D00340C7F /* Info.plist */,
-				413C9A91237F315800340C7F /* NewTests.swift */,
-				41446A9B23830BBD001E0DFB /* ScoringCalculatorUnitTests.swift */,
-			);
-			path = CaddieUnitTests;
-			sourceTree = "<group>";
-		};
 		41446A9723830604001E0DFB /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,8 +228,6 @@
 			isa = PBXGroup;
 			children = (
 				41784F872367696A00FB93E9 /* Caddie */,
-				41784F9C2367696C00FB93E9 /* CaddieTests */,
-				413C9A88237F2F5D00340C7F /* CaddieUnitTests */,
 				41B061B4238B4BD9005900DC /* CaddieUITests */,
 				41784F862367696A00FB93E9 /* Products */,
 			);
@@ -280,15 +258,6 @@
 				41784F942367696C00FB93E9 /* Info.plist */,
 			);
 			path = Caddie;
-			sourceTree = "<group>";
-		};
-		41784F9C2367696C00FB93E9 /* CaddieTests */ = {
-			isa = PBXGroup;
-			children = (
-				41784F9D2367696C00FB93E9 /* CaddieTests.swift */,
-				41784F9F2367696C00FB93E9 /* Info.plist */,
-			);
-			path = CaddieTests;
 			sourceTree = "<group>";
 		};
 		41B061B4238B4BD9005900DC /* CaddieUITests */ = {
@@ -439,18 +408,15 @@
 				41ACEC23238395540043C799 /* Team.swift in Sources */,
 				41ACEC20238394980043C799 /* PlayerDAO.swift in Sources */,
 				41ACEC2B2383957D0043C799 /* HomeViewController.swift in Sources */,
-				41446A9C23830BBD001E0DFB /* ScoringCalculatorUnitTests.swift in Sources */,
 				41ACEC302383958C0043C799 /* AppDelegate.swift in Sources */,
 				41ACEC262383956D0043C799 /* Caddie.xcdatamodeld in Sources */,
 				41ACEC2A2383957A0043C799 /* EditPlayerViewController.swift in Sources */,
 				41446A932382FE5C001E0DFB /* PlayerPlaying.swift in Sources */,
-				413C9A92237F315800340C7F /* NewTests.swift in Sources */,
 				41446AA2238325BD001E0DFB /* CustomButton.swift in Sources */,
 				41ACEC24238395570043C799 /* Course.swift in Sources */,
 				41ACEC2E238395850043C799 /* PlayerTableViewController.swift in Sources */,
 				41ACEC2F238395880043C799 /* TeamsKindTableViewController.swift in Sources */,
 				41ACEC28238395750043C799 /* CourseTableViewController.swift in Sources */,
-				413C9A8A237F2F5D00340C7F /* CaddieUnitTests.swift in Sources */,
 				41ACEC25238395680043C799 /* DataController.swift in Sources */,
 				41446A962382FE80001E0DFB /* Game.swift in Sources */,
 				41ACEC2D238395820043C799 /* PlayerStatisticsViewController.swift in Sources */,
