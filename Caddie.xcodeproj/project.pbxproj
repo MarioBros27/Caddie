@@ -59,6 +59,7 @@
 		41ACEC302383958C0043C799 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41784F882367696A00FB93E9 /* AppDelegate.swift */; };
 		41ACEC31238395990043C799 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4117556E237F8A8E001848CB /* Main.storyboard */; };
 		41ACEC32238395A50043C799 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41784F8F2367696C00FB93E9 /* Assets.xcassets */; };
+		41B061B6238B4BD9005900DC /* CaddieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B061B5238B4BD9005900DC /* CaddieUITests.swift */; };
 		41D4B0A22385CD2300A0C061 /* PlayGameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417466C62379CBBE00C6B282 /* PlayGameTableViewController.swift */; };
 		41D4B0A42385EA8C00A0C061 /* FinalScoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D4B0A32385EA8C00A0C061 /* FinalScoreTableViewController.swift */; };
 		41D4B0A62385EAB100A0C061 /* FinalScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D4B0A52385EAB100A0C061 /* FinalScoreTableViewCell.swift */; };
@@ -70,6 +71,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		413C9A8C237F2F5D00340C7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 41784F7D2367696A00FB93E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 41784F842367696A00FB93E9;
+			remoteInfo = Caddie;
+		};
+		41B061B8238B4BD9005900DC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 41784F7D2367696A00FB93E9 /* Project object */;
 			proxyType = 1;
@@ -116,6 +124,9 @@
 		41986BEC2378C5BE00D0A85E /* TeamsKindTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsKindTableViewCell.swift; sourceTree = "<group>"; };
 		41986BEE2378E73300D0A85E /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		41ACEC1E2383735C0043C799 /* CourseDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDAO.swift; sourceTree = "<group>"; };
+		41B061B3238B4BD9005900DC /* CaddieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CaddieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		41B061B5238B4BD9005900DC /* CaddieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaddieUITests.swift; sourceTree = "<group>"; };
+		41B061B7238B4BD9005900DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41D4B0A32385EA8C00A0C061 /* FinalScoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalScoreTableViewController.swift; sourceTree = "<group>"; };
 		41D4B0A52385EAB100A0C061 /* FinalScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalScoreTableViewCell.swift; sourceTree = "<group>"; };
 		41FA555C2371D73F0015B527 /* EditCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCourseViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +144,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		41784F822367696A00FB93E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41B061B0238B4BD9005900DC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -232,6 +250,7 @@
 				41784F872367696A00FB93E9 /* Caddie */,
 				41784F9C2367696C00FB93E9 /* CaddieTests */,
 				413C9A88237F2F5D00340C7F /* CaddieUnitTests */,
+				41B061B4238B4BD9005900DC /* CaddieUITests */,
 				41784F862367696A00FB93E9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -241,6 +260,7 @@
 			children = (
 				41784F852367696A00FB93E9 /* Caddie.app */,
 				413C9A87237F2F5D00340C7F /* CaddieUnitTests.xctest */,
+				41B061B3238B4BD9005900DC /* CaddieUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -269,6 +289,15 @@
 				41784F9F2367696C00FB93E9 /* Info.plist */,
 			);
 			path = CaddieTests;
+			sourceTree = "<group>";
+		};
+		41B061B4238B4BD9005900DC /* CaddieUITests */ = {
+			isa = PBXGroup;
+			children = (
+				41B061B5238B4BD9005900DC /* CaddieUITests.swift */,
+				41B061B7238B4BD9005900DC /* Info.plist */,
+			);
+			path = CaddieUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +338,24 @@
 			productReference = 41784F852367696A00FB93E9 /* Caddie.app */;
 			productType = "com.apple.product-type.application";
 		};
+		41B061B2238B4BD9005900DC /* CaddieUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41B061BC238B4BD9005900DC /* Build configuration list for PBXNativeTarget "CaddieUITests" */;
+			buildPhases = (
+				41B061AF238B4BD9005900DC /* Sources */,
+				41B061B0238B4BD9005900DC /* Frameworks */,
+				41B061B1238B4BD9005900DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				41B061B9238B4BD9005900DC /* PBXTargetDependency */,
+			);
+			name = CaddieUITests;
+			productName = CaddieUITests;
+			productReference = 41B061B3238B4BD9005900DC /* CaddieUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -325,6 +372,10 @@
 					};
 					41784F842367696A00FB93E9 = {
 						CreatedOnToolsVersion = 10.0;
+					};
+					41B061B2238B4BD9005900DC = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 41784F842367696A00FB93E9;
 					};
 				};
 			};
@@ -343,6 +394,7 @@
 			targets = (
 				41784F842367696A00FB93E9 /* Caddie */,
 				413C9A86237F2F5D00340C7F /* CaddieUnitTests */,
+				41B061B2238B4BD9005900DC /* CaddieUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -364,6 +416,13 @@
 				4117556F237F8A8F001848CB /* Main.storyboard in Resources */,
 				41784F932367696C00FB93E9 /* LaunchScreen.storyboard in Resources */,
 				41784F902367696C00FB93E9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41B061B1238B4BD9005900DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +497,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		41B061AF238B4BD9005900DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41B061B6238B4BD9005900DC /* CaddieUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -445,6 +512,11 @@
 			isa = PBXTargetDependency;
 			target = 41784F842367696A00FB93E9 /* Caddie */;
 			targetProxy = 413C9A8C237F2F5D00340C7F /* PBXContainerItemProxy */;
+		};
+		41B061B9238B4BD9005900DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 41784F842367696A00FB93E9 /* Caddie */;
+			targetProxy = 41B061B8238B4BD9005900DC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -652,6 +724,44 @@
 			};
 			name = Release;
 		};
+		41B061BA238B4BD9005900DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5QAYV63C5M;
+				INFOPLIST_FILE = CaddieUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mario.com.CaddieUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Caddie;
+			};
+			name = Debug;
+		};
+		41B061BB238B4BD9005900DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5QAYV63C5M;
+				INFOPLIST_FILE = CaddieUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mario.com.CaddieUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Caddie;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -678,6 +788,15 @@
 			buildConfigurations = (
 				41784FA32367696C00FB93E9 /* Debug */,
 				41784FA42367696C00FB93E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		41B061BC238B4BD9005900DC /* Build configuration list for PBXNativeTarget "CaddieUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41B061BA238B4BD9005900DC /* Debug */,
+				41B061BB238B4BD9005900DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
