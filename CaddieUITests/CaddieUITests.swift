@@ -333,6 +333,7 @@ tablesQuery.cells.containing(.staticText, identifier:"Oscar").children(matching:
         tablesQuery.cells.containing(.staticText, identifier:"Ivan").buttons["Increment"].tap()
         tablesQuery/*@START_MENU_TOKEN@*/.cells.containing(.staticText, identifier:"Ivan")/*[[".cells.containing(.staticText, identifier:\"2\")",".cells.containing(.staticText, identifier:\"Ivan\")"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.buttons["Increment"].tap()
         tablesQuery/*@START_MENU_TOKEN@*/.cells.containing(.staticText, identifier:"Ivan")/*[[".cells.containing(.staticText, identifier:\"2\")",".cells.containing(.staticText, identifier:\"Ivan\")"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.buttons["Increment"].tap()
+        
         incrementButtonEnrique.tap()
         incrementButtonEnrique.tap()
         tablesQuery.cells.containing(.staticText, identifier:"Enrique").children(matching: .button).matching(identifier: "unchekedPhoto").element(boundBy: 0).tap()
@@ -344,7 +345,15 @@ tablesQuery.cells.containing(.staticText, identifier:"Oscar").children(matching:
 
         incrementButtonOscar.tap()
         incrementButtonOscar.tap()
-tablesQuery.cells.containing(.staticText, identifier:"Oscar").children(matching: .button).matching(identifier: "unchekedPhoto").element(boundBy: 2).tap()
+        tablesQuery.cells.containing(.staticText, identifier:"Oscar").children(matching: .button).matching(identifier: "unchekedPhoto").element(boundBy: 2).tap()
+        
+      
+        app.navigationBars["9"].buttons["Terminar"].tap()
+        
+        XCTAssert(tablesQuery.staticTexts["24"].exists)
+        XCTAssert(tablesQuery.staticTexts["31"].exists)
+        
+        app.navigationBars["Caddie.FinalScoreTableView"].buttons["OK"].tap()
         
         
         
