@@ -47,7 +47,7 @@ class ScoringCalculator{
     }
     
     func switchMultiplicator(currentHole: Int){
-        if(currentHole == 9 || currentHole == 18 ){
+        if(currentHole == 9 || currentHole == 18 || currentHole == 17 || currentHole == 8){
             multiplicator = 2
         }else{
             multiplicator = 1
