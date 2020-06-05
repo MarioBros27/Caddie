@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		410204E723CAB7A50050AC35 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410204E523CAB7A50050AC35 /* CustomButton.swift */; };
+		410204E823CAB7A60050AC35 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410204E623CAB7A50050AC35 /* Constants.swift */; };
 		4117556F237F8A8F001848CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4117556E237F8A8E001848CB /* Main.storyboard */; };
 		413C9A7F237F236500340C7F /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413C9A7E237F236500340C7F /* Player.swift */; };
 		413C9A94237F725E00340C7F /* PlayGameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413C9A93237F725E00340C7F /* PlayGameTableViewCell.swift */; };
@@ -18,10 +20,6 @@
 		41446A992383062F001E0DFB /* ScoringCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41446A982383062F001E0DFB /* ScoringCalculator.swift */; };
 		41446A9E23831C42001E0DFB /* TeamPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41446A9D23831C42001E0DFB /* TeamPlaying.swift */; };
 		41446A9F23831C42001E0DFB /* TeamPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41446A9D23831C42001E0DFB /* TeamPlaying.swift */; };
-		41446AA1238325BD001E0DFB /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41446AA0238325BD001E0DFB /* CustomButton.swift */; };
-		41446AA2238325BD001E0DFB /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41446AA0238325BD001E0DFB /* CustomButton.swift */; };
-		41446AA4238325C8001E0DFB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41446AA3238325C8001E0DFB /* Constants.swift */; };
-		41446AA5238325C8001E0DFB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41446AA3238325C8001E0DFB /* Constants.swift */; };
 		4146AE672384C1D7005516A8 /* LiveScoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4146AE662384C1D7005516A8 /* LiveScoreTableViewController.swift */; };
 		4146AE692384C213005516A8 /* LiveScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4146AE682384C213005516A8 /* LiveScoreTableViewCell.swift */; };
 		4175F76A2381B206000BB8EC /* Caddie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4175F7682381B206000BB8EC /* Caddie.xcdatamodeld */; };
@@ -84,6 +82,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		410204E523CAB7A50050AC35 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		410204E623CAB7A50050AC35 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4117556E237F8A8E001848CB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		413C9A7E237F236500340C7F /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		413C9A87237F2F5D00340C7F /* CaddieUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CaddieUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,8 +93,6 @@
 		41446A942382FE80001E0DFB /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		41446A982383062F001E0DFB /* ScoringCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoringCalculator.swift; sourceTree = "<group>"; };
 		41446A9D23831C42001E0DFB /* TeamPlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamPlaying.swift; sourceTree = "<group>"; };
-		41446AA0238325BD001E0DFB /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = ../../../CustomButton.swift; sourceTree = "<group>"; };
-		41446AA3238325C8001E0DFB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../../../Constants.swift; sourceTree = "<group>"; };
 		4146AE662384C1D7005516A8 /* LiveScoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreTableViewController.swift; sourceTree = "<group>"; };
 		4146AE682384C213005516A8 /* LiveScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreTableViewCell.swift; sourceTree = "<group>"; };
 		417466C62379CBBE00C6B282 /* PlayGameTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGameTableViewController.swift; sourceTree = "<group>"; };
@@ -167,9 +165,9 @@
 		413C9A81237F2BE200340C7F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				41446AA3238325C8001E0DFB /* Constants.swift */,
+				410204E623CAB7A50050AC35 /* Constants.swift */,
+				410204E523CAB7A50050AC35 /* CustomButton.swift */,
 				41FA558A2371F81E0015B527 /* CourseTableViewCell.swift */,
-				41446AA0238325BD001E0DFB /* CustomButton.swift */,
 				41784FA823676B1C00FB93E9 /* PlayerTableViewCell.swift */,
 				413C9A93237F725E00340C7F /* PlayGameTableViewCell.swift */,
 				41986BEC2378C5BE00D0A85E /* TeamsKindTableViewCell.swift */,
@@ -412,7 +410,6 @@
 				41ACEC262383956D0043C799 /* Caddie.xcdatamodeld in Sources */,
 				41ACEC2A2383957A0043C799 /* EditPlayerViewController.swift in Sources */,
 				41446A932382FE5C001E0DFB /* PlayerPlaying.swift in Sources */,
-				41446AA2238325BD001E0DFB /* CustomButton.swift in Sources */,
 				41ACEC24238395570043C799 /* Course.swift in Sources */,
 				41ACEC2E238395850043C799 /* PlayerTableViewController.swift in Sources */,
 				41ACEC2F238395880043C799 /* TeamsKindTableViewController.swift in Sources */,
@@ -420,7 +417,6 @@
 				41ACEC25238395680043C799 /* DataController.swift in Sources */,
 				41446A962382FE80001E0DFB /* Game.swift in Sources */,
 				41ACEC2D238395820043C799 /* PlayerStatisticsViewController.swift in Sources */,
-				41446AA5238325C8001E0DFB /* Constants.swift in Sources */,
 				41ACEC22238395500043C799 /* CourseDAO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,13 +429,12 @@
 				41986BEB2378C52900D0A85E /* TeamsKindTableViewController.swift in Sources */,
 				41D4B0A42385EA8C00A0C061 /* FinalScoreTableViewController.swift in Sources */,
 				41784F8B2367696A00FB93E9 /* HomeViewController.swift in Sources */,
+				410204E723CAB7A50050AC35 /* CustomButton.swift in Sources */,
 				413C9A94237F725E00340C7F /* PlayGameTableViewCell.swift in Sources */,
 				41986BE72378935C00D0A85E /* ConfigureTeamsViewController.swift in Sources */,
 				4146AE692384C213005516A8 /* LiveScoreTableViewCell.swift in Sources */,
-				41446AA1238325BD001E0DFB /* CustomButton.swift in Sources */,
 				41986BEF2378E73300D0A85E /* Team.swift in Sources */,
 				4175F76A2381B206000BB8EC /* Caddie.xcdatamodeld in Sources */,
-				41446AA4238325C8001E0DFB /* Constants.swift in Sources */,
 				41ACEC1F2383735C0043C799 /* CourseDAO.swift in Sources */,
 				413C9A7F237F236500340C7F /* Player.swift in Sources */,
 				41784F892367696A00FB93E9 /* AppDelegate.swift in Sources */,
@@ -451,6 +446,7 @@
 				4175F7A32381D4FA000BB8EC /* PlayerDAO.swift in Sources */,
 				41784FAD236770F600FB93E9 /* EditPlayerViewController.swift in Sources */,
 				41446A902382FA91001E0DFB /* PlayerStatisticsViewController.swift in Sources */,
+				410204E823CAB7A60050AC35 /* Constants.swift in Sources */,
 				41784FAB23676FA500FB93E9 /* PlayerTableViewController.swift in Sources */,
 				41FA558B2371F81E0015B527 /* CourseTableViewCell.swift in Sources */,
 				41446A952382FE80001E0DFB /* Game.swift in Sources */,
@@ -658,6 +654,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5QAYV63C5M;
 				INFOPLIST_FILE = Caddie/Info.plist;
@@ -667,6 +664,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mario.com.Caddie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -676,6 +674,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5QAYV63C5M;
 				INFOPLIST_FILE = Caddie/Info.plist;
@@ -685,6 +684,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mario.com.Caddie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
